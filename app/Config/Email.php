@@ -9,7 +9,7 @@ class Email extends BaseConfig
 	/**
 	 * @var string
 	 */
-	public $fromEmail;
+	public $fromEmail = 'aidara.ndeye-khady@ugb.edu.sn';
 
 	/**
 	 * @var string
@@ -79,7 +79,7 @@ class Email extends BaseConfig
 	 *
 	 * @var integer
 	 */
-	public $SMTPTimeout = 15;
+	public $SMTPTimeout = 5;
 
 	/**
 	 * Enable persistent SMTP connections
@@ -93,7 +93,9 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPCrypto = 'tls';
+	public $SMTPCrypto = 'ssl';
+	// public $SMTP_SECURE = 'ssl';
+	public $SMTP_AUTH =  true;
 
 	/**
 	 * Enable word-wrap

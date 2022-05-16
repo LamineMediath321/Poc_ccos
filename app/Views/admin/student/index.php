@@ -109,14 +109,14 @@
                             <div class="form-group row ml-1">
                                 <label for="objet" class="col-sm-2 col-form-label">Objet</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="objet" placeholder="" name="objet">
+                                    <input type="text" class="form-control" id="objet" placeholder="" name="objet" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-12 col-sm-12">
                                 <label for="mis">Contenu</label>
-                                <textarea class="form-control"  maxlength="1300" rows="4" placeholder="" name="contenu"> </textarea>
+                                <textarea class="form-control"  maxlength="1300" rows="4" placeholder="" name="contenu" required> </textarea>
                             </div> 
                         </div> 
                         <div class="row">

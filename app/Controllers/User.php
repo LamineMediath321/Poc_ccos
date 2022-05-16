@@ -304,10 +304,13 @@ class User extends BaseController
 
 		$message = $data['contenu'];
 		$email = \Config\Services::email();
-		$email->setFrom('aidara953@ugb.edu.sn', '');
+		$email->setFrom('aidara.ndeye-khady@ugb.edu.sn', 'Ndeye khady Aidara');
 		$email->setTo($data['email']);
 		$email->setSubject($data['objet']);
 		$email->setMessage($message);//your message here
+		$data['email'] = $email;
+
+
 		
 		// $email->setCC('another@emailHere');//CC
 		// $email->setBCC('thirdEmail@emialHere');// and BCC
@@ -315,7 +318,7 @@ class User extends BaseController
 		// $email->attach($filename);
 			
 		$email->send();
-		// $email->printDebugger(['headers']);
+		$email->printDebugger(['headers']);
 
 
 		echo json_encode($data);
