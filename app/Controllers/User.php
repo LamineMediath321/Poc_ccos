@@ -285,4 +285,12 @@ class User extends BaseController
 
 		$this->adminPage('admin/users/index', $data);
 	}
+
+	public function get_email($id){
+		$data = (new UserModel())->getEmail($id);
+		echo json_encode($data);
+
+	}
+
+
 }

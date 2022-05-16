@@ -287,8 +287,8 @@
                         </div>
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
-                                <label for="pic"><img src="" width="130" height="130" id="pict" alt=""></label>
-                                <input type="file" name="pict" class="form-control" id="pic">
+                                <label for="pict"><img src="" width="130" height="130" id="pict" alt=""></label>
+                                <input type="file" name="pict" class="form-control" id="pic"  accept="image/*">
                             </div>
 
                         </div>

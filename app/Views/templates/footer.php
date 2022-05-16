@@ -430,8 +430,31 @@
     }
 
 
+    // function contacter() {
+    //     $('#formComp')[0].reset(); // reset form on modals
+    //     $('#add_comp_modal').modal('show'); // show bootstrap modal
+    // }
+    
+    function contacter(id) {
+        $('#formComp')[0].reset(); // reset form on modals
+        url = "<?php echo base_url('user/get_email') ?>/" + id;
+        $.ajax({
+            url:url,
+            type: "GET",
+            dataType: "JSON",
+            success: function(data) {
+                $('[name="email"]').val(data.email);
 
+                $('#add_comp_modal').modal('show');
+                console.log(data); // show bootstrap modal
+                // location.reload(); // for reload a page
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Une erreur est survenue');
+            }
+        });
 
+    }
 
     function save_comp() {
         let url;
@@ -464,8 +487,7 @@
         });
     }
 
-
-
+   
 
     function save_ent() {
         let url;
@@ -802,33 +824,33 @@
                 $('[name="bthDay"]').val(data.dateNaissance);
                 $('[name="bthPlace"]').val(data.lieuNaissance);
                 $('[name="natnalty"]').val(data.nationalite);
-                // $('[name="description"]').val(data.description);
 
                 if (data.photo != null && data.photo != "") {
                     $('#pict').attr("src", window.location.origin + '/assets/images/' + data.photo);
 
+
                 }
 
-                // var selectedVal = {
-                //     id: data.idProfil,
-                //     text: data.profils,
-                //     selected: true
-                // };
+                var selectedVal = {
+                    id: data.idProfil,
+                    text: data.profils,
+                    selected: true
+                };
 
-                // var item = [];
+                var item = [];
 
-                // var arsel = [];
-                // arsel.push(selectedVal.id);
+                var arsel = [];
+                arsel.push(selectedVal.id);
 
-                // var el = [];
-                // for (let i = 0; i < arsel.length; i++) {
+                var el = [];
+                for (let i = 0; i < arsel.length; i++) {
 
-                //     el.push(arsel[i]);
-                //     $.each(arsel[i].split(","), function(i, e) {
-                //         $(".selectpicker option[value='" + e + "']").prop("selected", true).trigger('change');
-                //     });
-                // };
-                // $('.selectpicker').selectpicker('refresh');
+                    el.push(arsel[i]);
+                    $.each(arsel[i].split(","), function(i, e) {
+                        $(".selectpicker option[value='" + e + "']").prop("selected", true).trigger('change');
+                    });
+                };
+                $('.selectpicker').selectpicker('refresh');
 
                 console.log(data);
                 console.log("ICIIIIIII");

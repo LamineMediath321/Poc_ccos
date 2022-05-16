@@ -61,6 +61,15 @@ class UserModel extends Model{
 					->first();  
 	}
 
+	
+
+	public function getEmail($id)
+	{
+		return $this->asArray()
+					->where(['idUtilisateur' => $id])
+					->first();  
+	}
+
 	public function getUsers()
 	{
 		return $this->select(['U.*', 'R.intitule AS role'])

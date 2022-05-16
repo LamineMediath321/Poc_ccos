@@ -104,19 +104,20 @@ class CvModel extends Model
         // $this->db->table('cv')->delete(array('idCV' => $resume));
 
         // $this->db->table('profil_cv')->delete(array('idCV' => $resume));
+        // $this->db->table('profil_cv')->insertBatch($profiles);
 
         
-    //     $result = array();
-    //     if (is_array($profiles) || is_object($profiles)){
-    //         foreach($profiles AS $key => $val){
-    //             $result[] = array(
-    //                 'idCV'   => $resume,
-    //                 'idProfil'   => $_POST['profiles'][$key]
-    //             );
-    //         } 
+        // $result = array();
+        // if (is_array($profiles) || is_object($profiles)){
+        //     foreach($profiles AS $profil){
+        //         $result[] = array(
+        //             'idCV'   => $resume,
+        //             'idProfil'   => $profil
+        //         );
+        //     } 
         
-    //         $this->db->table('profil_cv')->insertBatch($result);
-    //     }
+        //     $this->db->table('profil_cv')->insertBatch($result);
+        // }
     }
 
 }
