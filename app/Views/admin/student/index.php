@@ -116,7 +116,7 @@
                         <div class="row">
                             <div class="form-group col-12 col-sm-12">
                                 <label for="mis">Contenu</label>
-                                <textarea class="form-control" name="mis" id="mis" minlength="10" maxlength="1300" rows="4" placeholder="" name="contenu"> </textarea>
+                                <textarea class="form-control"  maxlength="1300" rows="4" placeholder="" name="contenu"> </textarea>
                             </div> 
                         </div> 
                         <div class="row">
@@ -125,7 +125,7 @@
                                 <div class="modal-footer">
                                     <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                    <button type="submit" id="btn_save" onclick="save_comp()" class="btn btn-primary">Envoyer</button>
+                                    <button type="submit" id="btn_save" onclick="save_contact()" class="btn btn-primary">Envoyer</button>
                                 </div>
                         </div>
 

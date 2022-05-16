@@ -292,5 +292,18 @@ class User extends BaseController
 
 	}
 
+	public function send_mail()
+	{
+		helper('form', 'url');
+
+		$data = array(
+			'objet' => $this->request->getVar('objet'),
+			'contenu' => $this->request->getVar('contenu'),
+			'email' => $this->request->getVar('email'),
+		);
+
+		echo json_encode($data);
+	}
+		
 
 }

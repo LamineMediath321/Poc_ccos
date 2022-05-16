@@ -456,6 +456,34 @@
 
     }
 
+    function save_contact() {
+        let url;
+        url = "<?php echo base_url('user/send_mail') ?>";
+       
+        let data = new FormData($('#formComp')[0]);
+
+        // ajax adding data to database
+        $.ajax({
+            url: url,
+            type: "POST",
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: data,
+            dataType: "text",
+            // async: false,
+            success: function(data) {
+                //if success close modal and reload ajax table
+                $('#add_comp_modal').modal('hide');
+                // location.reload(); // for reload a page
+                console.log(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Une erreur est survenue');
+            }
+        });
+    }
+
     function save_comp() {
         let url;
         if (save_method == 'add') {
