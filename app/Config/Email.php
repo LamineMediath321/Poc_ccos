@@ -33,7 +33,9 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $protocol = 'mail';
+	// public $protocol = 'mail';
+	public $protocol = 'smtp';
+
 
 	/**
 	 * The server path to Sendmail.
@@ -47,35 +49,37 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPHost;
+	public $SMTPHost = 'smtp.googlemail.com';
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var string
 	 */
-	public $SMTPUser;
+	public $SMTPUser = 'noreply-opportunite@ugb.edu.sn';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var string
 	 */
-	public $SMTPPass;
+	public $SMTPPass = 'N@th34M!$#]{.';
 
 	/**
 	 * SMTP Port
 	 *
 	 * @var integer
 	 */
-	public $SMTPPort = 25;
+	// public $SMTPPort = 25;
+	public $SMTPPort = 465;
+
 
 	/**
 	 * SMTP Timeout (in seconds)
 	 *
 	 * @var integer
 	 */
-	public $SMTPTimeout = 5;
+	public $SMTPTimeout = 15;
 
 	/**
 	 * Enable persistent SMTP connections

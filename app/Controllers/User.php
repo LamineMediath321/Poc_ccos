@@ -302,6 +302,22 @@ class User extends BaseController
 			'email' => $this->request->getVar('email'),
 		);
 
+		$message = $data['contenu'];
+		$email = \Config\Services::email();
+		$email->setFrom('aidara953@ugb.edu.sn', '');
+		$email->setTo($data['email']);
+		$email->setSubject($data['objet']);
+		$email->setMessage($message);//your message here
+		
+		// $email->setCC('another@emailHere');//CC
+		// $email->setBCC('thirdEmail@emialHere');// and BCC
+		// $filename = '/img/yourPhoto.jpg'; //you can use the App patch 
+		// $email->attach($filename);
+			
+		$email->send();
+		// $email->printDebugger(['headers']);
+
+
 		echo json_encode($data);
 	}
 		
