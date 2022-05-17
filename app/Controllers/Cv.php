@@ -172,7 +172,7 @@ class Cv extends BaseController
 			'dateNaissance' =>  $this->request->getVar('bthDay'),
 			'lieuNaissance' =>  $this->request->getVar('bthPlace'),
 			'nationalite'   =>  $this->request->getVar('natnalty'),
-			'idUtilisateur' =>  session('id')
+			'idUtilisateur' =>  session('id'),
 		);
 
 		// if ($_FILES['pict']['name']) {
@@ -197,14 +197,14 @@ class Cv extends BaseController
 		$data['photo'] = $name;
 
 
-		// $profiles = $this->request->getVar('profiles');
+
+
 		// foreach ($profiles as $profile) {
 		// 	$userProfiles[] = [
 		// 		'idCV'   => $resume,
 		// 		'idProfil'   => $profile
 		// 	];
 		// }
-
 		if ((new CvModel())->edit_persinfos($student_id, $data, $resume))
 			echo json_encode(array("status" => TRUE, "message" => "Informations modifiees"));
 

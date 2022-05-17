@@ -242,7 +242,7 @@
         <h4 class="modal-title">Informations personnelles</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
         </div>
-        <form method="post" action="javascript:void(0)" id="student_form" enctype="multipart/form-data" class="form-horizontal">
+        <form method="post" action="javascript:void(0)" id="student_form" enctype="multipart/form-data" class="">
             <div class="modal-body form">
                 <div class="row">
                     <div class="col-xs-9 col-sm-6">

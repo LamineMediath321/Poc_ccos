@@ -285,4 +285,44 @@ class User extends BaseController
 
 		$this->adminPage('admin/users/index', $data);
 	}
+
+	public function get_email($id){
+		$data = (new UserModel())->getEmail($id);
+		echo json_encode($data);
+
+	}
+
+	public function send_mail()
+	{
+		helper('form', 'url');
+
+		$data = array(
+			'objet' => $this->request->getVar('objet'),
+			'contenu' => $this->request->getVar('contenu'),
+			'email' => $this->request->getVar('email'),
+		);
+
+		$message = $data['contenu'];
+		$email = \Config\Services::email();
+		$email->setFrom('aidara.ndeye-khady@ugb.edu.sn', 'Ndeye khady Aidara');
+		$email->setTo($data['email']);
+		$email->setSubject($data['objet']);
+		$email->setMessage($message);//your message here
+		$data['email'] = $email;
+
+
+		
+		// $email->setCC('another@emailHere');//CC
+		// $email->setBCC('thirdEmail@emialHere');// and BCC
+		// $filename = '/img/yourPhoto.jpg'; //you can use the App patch 
+		// $email->attach($filename);
+			
+		$email->send();
+		$email->printDebugger(['headers']);
+
+
+		echo json_encode($data);
+	}
+		
+
 }

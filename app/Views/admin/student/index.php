@@ -40,6 +40,8 @@
                                     <th>Email</th>
                                     <th>UFR</th>
                                     <th>Candidatures</th>
+                                    <th>Contacter</th>
+                                    
 
                                     </tr>
                                 </thead>
@@ -50,11 +52,13 @@
                                     <th scope="row">
                                         <?= $i++ ?>
                                     </th>
-                                    <td><a href="<?= base_url() ?>/admin/cv/<?= $student['idUtilisateur'] ?>"><?= $student['prenom'] ?></a></td>
-                                    <td><a href="<?= base_url() ?>/admin/cv/<?= $student['idUtilisateur'] ?>"><?= $student['nom'] ?></a></td>
-                                    <td><a href="mailto:<?= $student['email'] ?>"><?= $student['email'] ?></a></td>
+                                    <td><a href="<?= base_url() ?>/admin/cv/<?= $student['idUtilisateur'] ?>" style="color:black"><?= $student['prenom'] ?></a></td>
+                                    <td><a href="<?= base_url() ?>/admin/cv/<?= $student['idUtilisateur'] ?>" style="color:black"><?= $student['nom'] ?></a></td>
+                                    <td><?= $student['email'] ?></td>
                                     <td><?= $student['intituleUfr'] ?></td>
-                                    <td> <a href="<?= base_url() ?>/admin/candidatures/<?= $student['idUtilisateur'] ?>"><i class="fa fa-eye"></a></td>
+                                    <td> <a href="<?= base_url() ?>/admin/candidatures/<?= $student['idUtilisateur'] ?>"><i class="fa fa-folder" aria-hidden="true" style="color:green"></i></a></td>
+                                    <td><a  href="#" onclick="contacter(<?= $student['idUtilisateur'] ?>)"><i class="fa fa-envelope" aria-hidden="true" style="color:blue"></i></a></td>
+
 
                                     </tr>
                                 <?php endforeach; ?>
@@ -67,6 +71,8 @@
                                         <th>Email</th>
                                         <th>UFR</th>
                                         <th>Candidatures</th>
+                                        <th>contacter</th>
+
 
                                     </tr>
                                 </tfoot>
@@ -78,59 +84,61 @@
         </div>
     </div>
 
-    <!-- Add modal view -->
-    <div class="modal fade" id="modal_competence_show" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <h4 class="modal-title">Description Competence</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <form method="get" action="javascript:void(0)" id="formationShowForm" enctype="multipart/form-data" class="form-horizontal">
-                    <div class="modal-body form">
-                        <div class="row">
-                            <div class="col-md-12">
-                                Le développeur PHP est-ce qu’on appelle un développeur back-end par opposition au développeur ou intégrateur front-end qui travaille en grande majorité sur la partie visible d’un site internet. Un développeur PHP peut travailler à son compte, au sein d’une agence digitale ou encore dans une ESN (entreprise de services du numérique). D’autres professions plus polyvalentes peuvent demander des connaissances plus ou moins approfondies en langage PHP afin de pouvoir lire ou modifier des lignes de code ou tout simplement dans le but de communiquer et de se faire comprendre auprès des développeurs. C’est le cas du webmaster, du consultant SEO ou du chef de projet web.
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="modal-footer" id="footerShow">
-                        <input type="hidden" name="idForm" class="form-control" id="idForm">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-
+            <!-- Add modal view -->
     <div class="modal" id="add_comp_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content ">
                 <div class="modal-header">
-                    <h4 class="modal-title">Competence</h4>
+                    <h4 class="modal-title">Envoi de mail</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <form method="post" action="javascript:void(0)" id="formComp" enctype="multipart/form-data" class="form-horizontal">
                     <div class="modal-body form">
+                    <div class="row">
+                           
+                           <div class="form-group row ml-1">
+                               <label for="objet" class="col-sm-2 col-form-label">A</label>
+                               <div class="col-sm-10">
+                                   <input type="text" class="form-control" id="email" name="email" placeholder="">
+                               </div>
+                           </div>
+                       </div>
+
                         <div class="row">
-                            <div class="col-12 col-sm-6">
-                                <div class="">
-                                    <label for="intitule">Intitule</label>
-                                    <input type="text" class="form-control" name="intitule" id="intitule" value="">
+                           
+                            <div class="form-group row ml-1">
+                                <label for="objet" class="col-sm-2 col-form-label">Objet</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="objet" placeholder="" name="objet" required>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-12 col-sm-12">
+                                <label for="mis">Contenu</label>
+                                <textarea class="form-control"  maxlength="1300" rows="4" placeholder="" name="contenu" required> </textarea>
+                            </div> 
+                        </div> 
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
 
+                                <div class="modal-footer">
+                                    <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                                    <button type="submit" id="btn_save" onclick="save_contact()" class="btn btn-primary">Envoyer</button>
+                                </div>
+                        </div>
 
-                            <div class="modal-footer">
-                                <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                                <button type="submit" id="btn_save" onclick="save_comp()" class="btn btn-primary">Valider</button>
-                            </div>
+                        
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+   
 </div>
+
+
+
+
+    
