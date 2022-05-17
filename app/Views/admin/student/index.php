@@ -99,7 +99,7 @@
                            <div class="form-group row ml-1">
                                <label for="objet" class="col-sm-2 col-form-label" style="font-weight:bold;">A</label>
                                <div class="col-sm-10">
-                                   <input type="text" class="form-control" id="email" name="email" placeholder="">
+                                   <input type="text" class="form-control" id="email" name="email" placeholder="" readonly>
                                </div>
                            </div>
                        </div>

@@ -474,9 +474,11 @@
             // async: false,
             success: function(data) {
                 //if success close modal and reload ajax table
-                $('#add_comp_modal').modal('hide');
                 // location.reload(); // for reload a page
-                console.log(data.message);
+                $('#add_comp_modal').modal('hide');
+                alert("Envoyé avec succés");
+
+
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Une erreur est survenue');
