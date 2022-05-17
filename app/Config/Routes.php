@@ -36,6 +36,7 @@ $routes->match(['get', 'post'], 'entreprises', 'Entreprise::index');
 // $routes->get('entreprises', 'Entreprise::index');
 $routes->get('formations', 'Formation::formations');
 $routes->match(['get', 'post'], 'competences', 'Competence::competences');
+$routes->get('admin/offre/(:any)', 'Offre::show/$1', ['filter' => 'auth']);
 $routes->get('/offre/(:any)', 'Offre::show/$1');
 $routes->get('offres', 'Offre::index');
 $routes->get('domaine_offres/(:any)', 'Offre::fieldOffers/$1');
