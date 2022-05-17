@@ -3,14 +3,15 @@
 namespace App\Controllers;
 
 use App\Models\CvModel;
-use App\Models\DomaineModel;
-use App\Models\ExperienceModel;
-use App\Models\FormationModel;
-use App\Models\LanguageModel;
-use App\Models\CompetenceModel;
 use App\Models\UserModel;
-use App\Models\EtablissementModel;
+use App\Models\OffreModel;
 use App\Models\ProfilModel;
+use App\Models\DomaineModel;
+use App\Models\LanguageModel;
+use App\Models\FormationModel;
+use App\Models\CompetenceModel;
+use App\Models\ExperienceModel;
+use App\Models\EtablissementModel;
 
 class Cv extends BaseController
 {
@@ -52,7 +53,9 @@ class Cv extends BaseController
 	{
 
 		$data = $this->getStudentResumeData($student_user_id);
+
 		if (session()->get('role') != 'etudiant') {
+			$data['mycandidacies'] 	=	(new OffreModel())->getStudentCandidacies($student_user_id);
 			$this->adminPage('admin/student/cv', $data);
 		} else {
 			$this->charger('resume', $data);

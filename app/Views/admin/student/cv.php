@@ -128,8 +128,65 @@
                         </div>
 
                     </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row ml-3">
+        <h2 class="text-center mb-2">Listes des candidatures de <?= $persinfo['prenom'] ?> <?= $persinfo['nom'] ?></h2>
+        <div class="col-xl-11 text-center">
+            <!-- Start My Candidacies List -->
+            <div class="tab-pane">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <td>Nom entreprise</td>
+                                    <td>Intutile offre</td>
+                                    <td>Statut</td>
+                                    <td>Action(s)</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($mycandidacies as $offer) { ?>
+                                    <tr>
+                                        <td><?= $offer['nomEntreprise'] ?></td>
+                                        <td><?= $offer['title'] ?></td>
+
+
+                                        <td>
+                                            <?php if ($offer['statut'] === "Validée") { ?>
+                                                <span class="alert-success"><?php echo $offer['statut'] ?></span>
+                                            <?php } elseif ($offer['statut'] === "Rejetée") { ?>
+                                                <span class="alert-danger"><?php echo $offer['statut'] ?></span>
+                                            <?php } else { ?>
+                                                <span class="alert-info"><?php echo $offer['statut'] ?></span>
+                                            <?php } ?>
+                                        </td>
+                                        <td class="">
+                                            <div class="btn-group-sm">
+                                                <a class="btn btn-primary" href="<?php echo base_url(); ?>/offre/<?= $offer['idOpportunite'] ?>"><i class="fa fa-eye"></i>
+                                                </a>
+                                                <?php if ($offer['statut'] == "En attente") { ?>
+                                                    <a class="btn btn-danger" href="#" onclick="delete_poste(<?php echo $offer['idOpportunite']; ?>)"><i class="fa fa-trash-o"></i></a>
+                                                <?php } ?>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+            <!-- End My Candidacies List -->
+
         </div>
     </div>
 </div>
