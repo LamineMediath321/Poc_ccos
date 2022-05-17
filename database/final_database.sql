@@ -319,14 +319,14 @@ CREATE TABLE `domaine` (
   PRIMARY KEY (`idDomaine`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
+ ALTER TABLE domaine MODIFY intitule varchar(250) NOT NULL;
 --
 -- Dumping data for table `domaine`
 --
 
 LOCK TABLES `domaine` WRITE;
 /*!40000 ALTER TABLE `domaine` DISABLE KEYS */;
-INSERT INTO `domaine` VALUES (4,'Informatique','icon-laptop'),(5,'Economie','icon-usd'),(6,'Jurique','icon-suitcase'),(7,'Santé','icon-user-md'),(8,'Ingénierie','icon-home'),(9,'Agronomie','icon-leaf'),(10,'Télécomunication','icon-signal'),(11,'Géographie','icon-globe');
+INSERT INTO `domaine` VALUES (4,'Informatique','icon-laptop'),(5,'Economie','icon-usd'),(6,'Jurique','icon-suitcase'),(7,'Santé','icon-user-md'),(8,'Ingénierie','icon-home'),(9,'Agronomie','icon-leaf'),(10,'Télécommunication','icon-signal'),(11,'Géographie','icon-globe');
 /*!40000 ALTER TABLE `domaine` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -12,7 +12,7 @@
     endif;
         ?>
         <h2></h2>
-        </div>
+        </div> 
 </section>
 
 <div class="clearfix"></div>
@@ -90,7 +90,51 @@
                     </ul>
                     <!-- Start All Sec -->
                     <div class="tab-content">
-
+                    <div class="row">
+                                <?php foreach ($offers as $offer) { ?>
+                                    <div class="item-click">
+                                        <article>
+                                            <div class="row brows-job-list">
+                                                <div class="col-md-1 col-sm-2 small-padding">
+                                                    <div class="brows-job-company-img">
+                                                        <a href="<?php echo base_url(); ?>/offre/<?= $offer['idOpportunite'] ?>">
+                                                            <img src="<?php echo base_url('assets/images/' . $offer['logo']); ?>" class="img-responsive" alt="" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-5">
+                                                    <div class="brows-job-position">
+                                                        <a href="<?php echo base_url(); ?>/offre/<?= $offer['idOpportunite'] ?>">
+                                                            <h3><?= $offer['title'] ?></h3>
+                                                        </a>
+                                                        <p>
+                                                            <span><?= $offer['nomEntreprise'] ?></span><span class="brows-job-sallery"><?= $offer['studyLevel'] ?></span>
+                                                            <span class="job-type cl-success bg-trans-success"><?= $offer['contractType'] ?></span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-sm-3">
+                                                    <div class="brows-job-location">
+                                                        <p><i class="fa fa-map-marker"></i><?= $offer['adresse'] ?></p>
+                                                    </div>
+                                                </div>
+                                                <?php if (session()->get('role') == 'etudiant') : ?>
+                                                    <div class="">
+                                                        <div class="brows-job-link">
+                                                            <?php if (!$offer['have_apply']) : ?>
+                                                                <a href="<?= base_url() . '/Offre/applyToAOffer/' . $offer['idOpportunite']; ?>" class="btn btn-default">
+                                                                    Postuler
+                                                                </a>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                            <!--span class="tg-themetag tg-featuretag">Premium</span-->
+                                        </article>
+                                    </div>
+                                <?php } ?>
+                            </div>
                         <!-- Start Job List -->
                         <div id="offers" class="tab-pane fade">
                             <div class="row">
