@@ -52,19 +52,26 @@ class Cv extends BaseController
 	{
 
 		$data = $this->getStudentResumeData($student_user_id);
-		if (session()->get('role') != 'etudiant') {
+		if (session()->get('role') != 'etudiant'){
 			$this->adminPage('admin/student/cv', $data);
-		} else {
-			$this->charger('resume', $data);
+
+
 		}
+		else{
+			$this->charger('resume', $data);
+
+
+		}
+
+
 	}
 
-	public function get_personal_infos($id)
-	{
+	public function get_personal_infos($id){
 		$student_id = (new CvModel())->getStudentId($id);
 		$data = (new CvModel())->getPersinfo($student_id);
 
 		echo json_encode($data);
+
 	}
 
 	public function resumes()
@@ -139,7 +146,7 @@ class Cv extends BaseController
 				'idProfil'   => $profile
 			];
 		}
-
+	
 		if ($model->add_persinfos($data, $userProfiles)) {
 			echo json_encode(array("status" => TRUE, "message" => "Entreprise ajouté"));
 		} else {
@@ -169,7 +176,7 @@ class Cv extends BaseController
 			'dateNaissance' =>  $this->request->getVar('bthDay'),
 			'lieuNaissance' =>  $this->request->getVar('bthPlace'),
 			'nationalite'   =>  $this->request->getVar('natnalty'),
-			'idUtilisateur' =>  session('id')
+			'idUtilisateur' =>  session('id'),
 		);
 
 		// if ($_FILES['pict']['name']) {
@@ -194,14 +201,14 @@ class Cv extends BaseController
 		$data['photo'] = $name;
 
 
-		// $profiles = $this->request->getVar('profiles');
+		
+
 		// foreach ($profiles as $profile) {
 		// 	$userProfiles[] = [
 		// 		'idCV'   => $resume,
 		// 		'idProfil'   => $profile
 		// 	];
 		// }
-
 		if ((new CvModel())->edit_persinfos($student_id, $data, $resume))
 			echo json_encode(array("status" => TRUE, "message" => "Informations modifiees"));
 

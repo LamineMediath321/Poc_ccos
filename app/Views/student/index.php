@@ -250,7 +250,7 @@
                 <h4 class="modal-title">Informations personnelles</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
             </div>
-            <form method="post" action="javascript:void(0)" id="student_form" enctype="multipart/form-data" class="form-horizontal">
+            <form method="post" action="javascript:void(0)" id="student_form" enctype="multipart/form-data" class="">
                 <div class="modal-body form">
                     <div class="row">
                         <div class="col-xs-9 col-sm-6">
@@ -331,8 +331,8 @@
                         </div>
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
-                                <label for="pic"><img src="" width="130" height="130" id="pict" alt=""></label>
-                                <input type="file" name="pict" class="form-control" id="pic">
+                                <label for="pict"><img src="" width="130" height="130" id="pict" alt=""></label>
+                                <input type="file" name="pict" class="form-control" id="pic"  accept="image/*">
                             </div>
 
                         </div>
