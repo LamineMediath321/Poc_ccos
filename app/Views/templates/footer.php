@@ -476,7 +476,7 @@
                 //if success close modal and reload ajax table
                 $('#add_comp_modal').modal('hide');
                 // location.reload(); // for reload a page
-                console.log(data);
+                console.log(data.message);
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Une erreur est survenue');
