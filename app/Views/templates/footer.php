@@ -512,11 +512,16 @@
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                alert("error");
-
+                $("#error").text('Ce champ est obligatoire');
+                $("#error").attr('class', 'text-danger mt-2');
+                $("#icon").attr('class', 'fa fa-check');
 
             }
         });
+    }
+
+    function hideMessage(id) {
+        $("#error").text("");
     }
 
 

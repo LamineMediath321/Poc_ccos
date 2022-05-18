@@ -134,27 +134,35 @@ endif;
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
                 </div>
 
-               
+
                 <form method="post" action="javascript:void(0)" id="formComp" enctype="multipart/form-data" class="form-horizontal">
-               
+
                     <div class="modal-body form">
                         <div class="row">
-                            
+
                             <div class="col-12 col-sm-6">
-                                    <label for="intitule">Intitule</label>
-                                    <input type="text" class="form-control" name="intitule" id="intitule" value="">
-                                
+                                <label for="intitule">Intitule</label>
+                                <input type="text" class="form-control" name="intitule" id="intitule" onfocus="hideMessage()">
+
                             </div>
                         </div>
 
+                        <div class="row">
 
-
-
-                            <div class="modal-footer">
-                                <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                                <button type="submit" id="btn_save" onclick="save_comp()" class="btn btn-primary">Valider</button>
+                            <div class="col-6 col-sm-4">
+                                <p id="error"></p>
                             </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="modal-footer">
+                        <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        <button type="submit" id="btn_save" onclick="save_comp()" class="btn btn-primary">Valider</button>
+                    </div>
                 </form>
             </div>
         </div>
