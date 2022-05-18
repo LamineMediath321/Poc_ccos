@@ -319,7 +319,7 @@ CREATE TABLE `domaine` (
   PRIMARY KEY (`idDomaine`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
- ALTER TABLE domaine MODIFY intitule varchar(250) NOT NULL;
+ ALTER TABLE domaine MODIFY intitule varchar(254) NOT NULL;
 --
 -- Dumping data for table `domaine`
 --
@@ -378,7 +378,8 @@ CREATE TABLE `domaine_formation` (
   CONSTRAINT `FK_domaineFormation1` FOREIGN KEY (`idFormation`) REFERENCES `formation` (`idFormation`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
+ALTER TABLE domaine_formation drop foreign key FK_domaineFormation;
+ALTER TABLE domaine_formation add constraint fk_domaineformation FOREIGN KEY (idDomaine) REFERENCES  domaine (idDomaine) ON DELETE CASCADE ON UPDATE CASCADE;
 --
 -- Dumping data for table `domaine_formation`
 --
@@ -961,6 +962,8 @@ CREATE TABLE `profil` (
   CONSTRAINT `FK_domaine_profil` FOREIGN KEY (`idDomaine`) REFERENCES `domaine` (`idDomaine`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+ALTER TABLE profil drop foreign key FK_domaine_profil;
+ALTER TABLE profil add constraint FK_domaine_profil FOREIGN KEY (idDomaine) REFERENCES  domaine (idDomaine) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Dumping data for table `profil`
