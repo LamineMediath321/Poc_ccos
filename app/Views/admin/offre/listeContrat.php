@@ -76,29 +76,34 @@
 
 <div class="modal" id="modal_form_tc" role="dialog">
     <div class="modal-dialog modal-lg">
-    <div class="modal-content ">
-        <div class="modal-header">
-        <h4 class="modal-title">Type Contrat</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
-        </div>
-        <form method="post" action="javascript:void(0)" id="formtc" enctype="multipart/form-data" class="form-horizontal">
-            <div class="modal-body form">
-                <div class="row">
-                    <div class="col-12 col-sm-6">
-                        <div class="form-group">
-                            <label for="intituleTC">Intitule</label>
-                            <input type="text" class="form-control" name="intituleTC" id="intituleTC" value="">
+        <div class="modal-content ">
+            <div class="modal-header">
+            <h4 class="modal-title">Type Contrat</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <form method="post" action="javascript:void(0)" id="formtc" enctype="multipart/form-data" class="form-horizontal">
+                <div class="modal-body form">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="intituleTC">Intitule</label>
+                                <input type="text" class="form-control" name="intituleTC" id="intituleTC" value="" onfocus="hideMessage()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-sm-4">
+                            <p id="error" style=" font-style:italic;"></p>
                         </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="idTC" class="form-control" id="idTC">                                       
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="submit" id="btn_save" onclick="save_contract_type()" class="btn btn-primary">Valider</button>
+                </div>
+            </form>
             </div>
-            <div class="modal-footer">
-                <input type="hidden" name="idTC" class="form-control" id="idTC">                                       
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                <button type="submit" id="btn_save" onclick="save_contract_type()" class="btn btn-primary">Valider</button>
-            </div>
-        </form>
         </div>
-    </div>
     </div>
 </div>

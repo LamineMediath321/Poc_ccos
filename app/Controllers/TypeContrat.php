@@ -9,7 +9,7 @@ class TypeContrat extends BaseController
         $this->model = new TypeContratModel();
     }
     
-     /**
+     /** 
      * Liste des types de contrats
      *
      * @return void
@@ -39,12 +39,21 @@ class TypeContrat extends BaseController
         'intitule' => $this->request->getVar('intituleTC'),
         
       );
+      $comp = $this->model->get_typeContrat($data['intitule']);
       
-      if ($this->model->add_typeContrat($data)){
-        echo json_encode(array("status" => TRUE, "message" => "Type Contrat ajoutée"));
-      }
-      else {
-        echo json_encode(array("status" => false, "message" => "Failed"));
+      if($this->request->getMethod() == 'post'){
+        $rules = [
+          'intitule' => 'required'
+        ];
+        if($this->validate($rules)) {
+          if(empty($comp))
+            $this->model->add_typeContrat($data);
+        }
+        else{
+          $data['validation'] = $this->validator;
+          echo_json($data);
+  
+        }
       }
     }
 
@@ -57,10 +66,19 @@ class TypeContrat extends BaseController
             'intitule' => $this->request->getVar('intituleTC')
         );
 
-        if ($this->model->update_tc(array('idTypeContrat' => $this->request->getVar('idTC')), $data))
-            echo json_encode(array("status" => TRUE, "message" => "TypeContrat modifié"));
-        else 
-            echo json_encode(array("status" => false, "message" => "Failed to update"));
+        if ($this->request->getMethod() == 'post') {
+          $rules = [
+            'intitule' => 'required'
+          ];
+          if($this->validate($rules)) {
+            $this->model->update_competence(array('idTypeContrat' => $this->request->getVar('idTypeContrat')), $data);
+          }
+          else{
+            $data['validation'] = $this->validator;
+            echo_json($data);
+    
+          }
+        }
     }
 
 

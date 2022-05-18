@@ -407,13 +407,8 @@
                 $('[name="idCompetence"]').val(data.idCompetence);
                 $('[name="intitule"]').val(data.intitule);
                 console.log(data);
-
                 console.log($('[name="intitule"]').val());
                 console.log($('[name="idCompetence"]').val());
-
-
-
-
                 $('#add_comp_modal').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Modifier Competence'); // Set title to Bootstrap modal title
             },
@@ -1356,25 +1351,31 @@
         } else if (save_method == 'update') {
             url = "<?php echo base_url('typeContrat/edit_contract_type') ?>";
         }
-
         //var data = new FormData($('#formtc')[0]);
+        let data = new FormData($('#formtc')[0]);
 
         // ajax adding data to database
-        $.ajax({
-            url: url,
-            type: "POST",
-            data: $('#formtc').serialize(),
-            dataType: "JSON",
-            // async: false,
-            success: function(data) {
-                //if success close modal and reload ajax table
-                $('#modal_form_tc').modal('hide');
-                location.reload(); // for reload a page
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.log(jqXHR);
-                alert('Une erreur est survenue');
-            }
+            $.ajax({
+                url: url,
+                type: "POST",
+                contentType: false,
+                cache: false,
+                processData: false,
+                data: data,
+                dataType: "text",
+                // async: false,
+                success: function(data) {
+                    //if success close modal and reload ajax table
+                    $('#modal_form_tc').modal('hide');
+                    location.reload(); // for reload a page
+
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    $("#error").text('Ce champ est obligatoire');
+                    $("#error").attr('class', 'text-danger mt-2');
+                    $("#icon").attr('class', 'fa fa-check');
+
+                }
         });
     }
 
