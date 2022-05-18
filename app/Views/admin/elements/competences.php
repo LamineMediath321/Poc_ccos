@@ -141,27 +141,20 @@ endif;
                         <div class="row">
 
                             <div class="col-12 col-sm-6">
-                                <label for="intitule">Intitule</label>
-                                <input type="text" class="form-control" name="intitule" id="intitule" onfocus="hideMessage()">
+                                <label for="intitule" style="font-weight:bold;">Intitule</label>
+                                <input type="text" class="form-control" name="intitule" id="intitule" onfocus="hideMessage()" onkeyup="ValidateInput()">
 
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-6 col-sm-4">
-                                <p id="error"></p><i class="fa fa-eye"></i>
-                            </div>
+                            <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
                         </div>
-                    </div>
-
-
-
-
-                    <div class="modal-footer">
-                        <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                        <button type="submit" id="btn_save" onclick="save_comp()" class="btn btn-primary">Valider</button>
-                    </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                            <button type="submit" id="btn_save" onclick="save_comp()" class="btn btn-primary">Valider</button>
+                        </div>
                 </form>
             </div>
         </div>
