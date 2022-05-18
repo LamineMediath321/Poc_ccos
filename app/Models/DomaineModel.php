@@ -25,6 +25,11 @@ class DomaineModel extends Model{
             ->get()->getRow();
     }
 
+    public function get_domaine($attribute) {
+        return $this->where('intitule', $attribute)
+            ->get()->getRow();
+    }
+
     public function edit_field($id, $data)
     {
         $this->db->table($this->table)->update($data, $id);

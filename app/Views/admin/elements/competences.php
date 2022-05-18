@@ -105,6 +105,7 @@ endif;
                     <h4 class="modal-title">Description Competence</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
+
                 <form method="get" action="javascript:void(0)" id="formationShowForm" enctype="multipart/form-data" class="form-horizontal">
                     <div class="modal-body form">
                         <div class="row">
@@ -132,15 +133,21 @@ endif;
                     <h4 class="modal-title">Competence</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
                 </div>
+
+               
                 <form method="post" action="javascript:void(0)" id="formComp" enctype="multipart/form-data" class="form-horizontal">
+               
                     <div class="modal-body form">
                         <div class="row">
+                            
                             <div class="col-12 col-sm-6">
-                                <div class="">
                                     <label for="intitule">Intitule</label>
                                     <input type="text" class="form-control" name="intitule" id="intitule" value="">
-                                </div>
+                                
                             </div>
+                        </div>
+
+
 
 
                             <div class="modal-footer">

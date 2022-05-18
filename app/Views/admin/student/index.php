@@ -26,7 +26,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h1>Liste des etudiants</h1>
+                        <h3 style="color:brown">Liste des etudiants</h3>
                     </div>
                     <div id="result"></div>
                     <div class="card-body">
@@ -89,7 +89,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content ">
                 <div class="modal-header">
-                    <h4 class="modal-title">Envoi de mail</h4>
+                    <h4 class="modal-title">Nouveau mail</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <form method="post" action="javascript:void(0)" id="formComp" enctype="multipart/form-data" class="form-horizontal">
@@ -97,9 +97,9 @@
                     <div class="row">
                            
                            <div class="form-group row ml-1">
-                               <label for="objet" class="col-sm-2 col-form-label">A</label>
+                               <label for="objet" class="col-sm-2 col-form-label" style="font-weight:bold;">A</label>
                                <div class="col-sm-10">
-                                   <input type="text" class="form-control" id="email" name="email" placeholder="">
+                                   <input type="text" class="form-control" id="email" name="email" placeholder="" readonly>
                                </div>
                            </div>
                        </div>
@@ -107,7 +107,7 @@
                         <div class="row">
                            
                             <div class="form-group row ml-1">
-                                <label for="objet" class="col-sm-2 col-form-label">Objet</label>
+                                <label for="objet" style="font-weight:bold;" class="col-sm-2 col-form-label">Objet</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="objet" placeholder="" name="objet" required>
                                 </div>
@@ -115,7 +115,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-12 col-sm-12">
-                                <label for="mis">Contenu</label>
+                                <label for="contenu" style="font-weight:bold;">Contenu</label>
                                 <textarea class="form-control"  maxlength="1300" rows="4" placeholder="" name="contenu" required> </textarea>
                             </div> 
                         </div> 

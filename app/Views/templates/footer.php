@@ -423,17 +423,7 @@
         });
     }
 
-    function add_competence() {
-        save_method = 'add';
-        $('#formComp')[0].reset(); // reset form on modals
-        $('#add_comp_modal').modal('show'); // show bootstrap modal
-    }
 
-
-    // function contacter() {
-    //     $('#formComp')[0].reset(); // reset form on modals
-    //     $('#add_comp_modal').modal('show'); // show bootstrap modal
-    // }
 
     function contacter(id) {
         $('#formComp')[0].reset(); // reset form on modals
@@ -447,9 +437,9 @@
 
                 $('#add_comp_modal').modal('show');
                 console.log(data); // show bootstrap modal
-                // location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
+
                 alert('Une erreur est survenue');
             }
         });
@@ -474,15 +464,26 @@
             // async: false,
             success: function(data) {
                 //if success close modal and reload ajax table
-                $('#add_comp_modal').modal('hide');
                 // location.reload(); // for reload a page
-                console.log(data);
+                $('#add_comp_modal').modal('hide');
+                alert("Envoyé avec succés");
+
+
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Une erreur est survenue');
             }
         });
     }
+
+    function add_competence() {
+        save_method = 'add';
+        $('#formComp')[0].reset(); // reset form on modals
+        $('#add_comp_modal').modal('show'); // show bootstrap modal
+
+
+    }
+
 
     function save_comp() {
         let url;
@@ -508,9 +509,12 @@
                 //if success close modal and reload ajax table
                 $('#add_comp_modal').modal('hide');
                 location.reload(); // for reload a page
+
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                alert('Une erreur est survenue');
+                alert("error");
+
+
             }
         });
     }
@@ -1432,14 +1436,18 @@
         } else if (save_method == 'edit') {
             url = "<?php echo base_url('domaine/edit_field') ?>";
         }
+        let data = new FormData($('#field_form')[0]);
 
 
         // ajax adding data to database
         $.ajax({
             url: url,
             type: "POST",
-            data: $('#field_form').serialize(),
-            dataType: "JSON",
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: data,
+            dataType: "text",
             // async: false,
             success: function(data) {
                 console.log(data);
@@ -1519,16 +1527,21 @@
             url = "<?php echo base_url('profil/edit_profile') ?>";
         }
 
+        let data = new FormData($('#profile_form')[0]);
+        console.log(data);
 
         // ajax adding data to database
         $.ajax({
             url: url,
             type: "POST",
-            data: $('#profile_form').serialize(),
-            dataType: "JSON",
-            // async: false,
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: data,
+            dataType: "text",
             success: function(data) {
                 //if success close modal and reload ajax table
+                console.log("ici");
                 $('#profile_modal').modal('hide');
                 location.reload(); // for reload a page
             },

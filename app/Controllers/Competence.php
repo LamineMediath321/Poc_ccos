@@ -105,10 +105,21 @@ class Competence extends BaseController
 			'intitule' => $this->request->getVar('intitule'),
 		);
 
-		if ($this->model->update_competence(array('idCompetence' => $this->request->getVar('idCompetence')), $data))
-			echo json_encode(array("status" => TRUE, "message" => "Competence modifiée"));
-		else
-			echo json_encode(array("status" => false, "message" => "Failed to update"));
+		if($this->request->getMethod() == 'post'){
+			$rules = [
+				'intitule' => 'required'
+			];
+			if($this->validate($rules)) {
+				$this->model->update_competence(array('idCompetence' => $this->request->getVar('idCompetence')), $data);
+			}
+			else{
+				$data['validation'] = $this->validator;
+				echo_json($data);
+
+			}
+		}
+
+	
 	}
 
 
@@ -121,11 +132,24 @@ class Competence extends BaseController
 
 
 		);
+		$comp = $this->model->get_competence($data['intitule']);
 
-		if ($this->model->add_competence($data)) {
-			echo json_encode(array("status" => TRUE, "message" => "Competence ajoutée"));
-		} else {
-			echo json_encode(array("status" => false, "message" => "Failed"));
+
+		if($this->request->getMethod() == 'post'){
+			$rules = [
+				'intitule' => 'required'
+			];
+			if($this->validate($rules)) {
+				if(empty($comp))
+					$this->model->add_competence($data);
+			}
+			else{
+				$data['validation'] = $this->validator;
+				echo_json($data);
+
+			}
 		}
+
+		
 	}
 }
