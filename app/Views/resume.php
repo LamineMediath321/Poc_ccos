@@ -244,7 +244,7 @@
         </div>
         <form method="post" action="javascript:void(0)" id="student_form" enctype="multipart/form-data" class="">
             <div class="modal-body form">
-                <div class="row">
+                <div class="row ml-5">
                     <div class="col-xs-9 col-sm-6">
                         <div class="form-group">
                             <label for="lstname">Nom</label>
@@ -306,13 +306,13 @@
                             <input type="text" class="form-control" name="natnalty" id="natnalty" value="">
                         </div>
                     </div>
-                    <div class="col-xs-9 col-sm-6">                                        
+                    <!-- <div class="col-xs-9 col-sm-6">                                        
                         <div class="form-group">
                             <label class="bmd-label-floating" for="description">Description</label>
                             <textarea class="form-control" name="description" id="description" minlength="10" maxlength="1300" rows="4" placeholder=""> </textarea>
 
                         </div> 
-                    </div>
+                    </div> -->
                     <div class="col-xs-9 col-sm-6">
                         <div class="form-group">
                             <label for="pic"><img src="" width="130" height="130" id="pict" alt="" ></label> 
@@ -550,3 +550,11 @@
     </div>
     </div>
 </div>
+
+<style>
+    .form-group{
+        width:85%;
+        padding-left:3.5em;
+    }
+    
+</style>

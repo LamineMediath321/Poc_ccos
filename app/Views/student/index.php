@@ -278,13 +278,13 @@
                                 <input type="text" class="form-control" name="natnalty" id="natnalty" value="">
                             </div>
                         </div>
-                        <div class="col-xs-9 col-sm-12">
+                        <!-- <div class="col-xs-9 col-sm-12">
                             <div class="form-group ">
                                 <label class="bmd-label-floating" for="description">Description</label>
                                 <textarea class="form-control textarea" name="description" id="description" minlength="10" maxlength="1300" rows="4" placeholder=""> </textarea>
 
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
                                 <label for="pict"><img src="" width="130" height="130" id="pict" alt=""></label>
@@ -312,3 +312,10 @@
     </div>
 </div>
 </div>
+<style>
+    .form-group{
+        width:85%;
+        padding-left:3.5em;
+    }
+    
+</style>
