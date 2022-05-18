@@ -148,7 +148,6 @@ endif;
                         </div>
 
                         <div class="row">
-
                             <div class="col-6 col-sm-4">
                                 <p id="error"></p>
                             </div>
