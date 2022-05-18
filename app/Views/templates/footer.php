@@ -434,12 +434,12 @@
     //     $('#formComp')[0].reset(); // reset form on modals
     //     $('#add_comp_modal').modal('show'); // show bootstrap modal
     // }
-    
+
     function contacter(id) {
         $('#formComp')[0].reset(); // reset form on modals
         url = "<?php echo base_url('user/get_email') ?>/" + id;
         $.ajax({
-            url:url,
+            url: url,
             type: "GET",
             dataType: "JSON",
             success: function(data) {
@@ -459,7 +459,7 @@
     function save_contact() {
         let url;
         url = "<?php echo base_url('user/send_mail') ?>";
-       
+
         let data = new FormData($('#formComp')[0]);
 
         // ajax adding data to database
@@ -515,7 +515,7 @@
         });
     }
 
-   
+
 
     function save_ent() {
         let url;
@@ -893,7 +893,7 @@
         });
     }
 
-    
+
     function save_cv() {
         let url;
         if (save_method == 'add') {
@@ -926,7 +926,7 @@
         });
     }
 
-    
+
 
     //  3.2 Formation
     function add_formation() {

@@ -137,14 +137,11 @@
 									<th>Entreprise</th>
 									<th>Nom</th>
 									<th>Prenom</th>
-									<th>Date Postulée</th>
-									<th>Date de Cloture</th>
 									<th>Statut</th>
 									<th>Actions</th>
 								</tr>
 							</thead>
 							<tbody>
-								<?php setlocale(LC_TIME, 'fr_FR.utf8', 'french', 'French_France.1252', 'fr_FR.ISO8859-1', 'fra'); ?>
 								<?php foreach ($ofcandidacies as $etudiant_postule) { ?>
 									<?php if ($etudiant_postule['statut'] !== "Rejetée") { ?>
 										<tr>
@@ -152,23 +149,21 @@
 											<td><?= $etudiant_postule['nomEntreprise'] ?></td>
 											<td><?= $etudiant_postule['nom'] ?></td>
 											<td><?= $etudiant_postule['prenom'] ?></td>
-											<td><?= strftime("%d %b %G", strtotime($etudiant_postule['date_postulee'])) ?></td>
-											<td><?= strftime("%d %b %G", strtotime($etudiant_postule['dateCloture'])) ?></td>
 											<?php if ($etudiant_postule['statut'] === "En attente") { ?>
 												<td class="text-white bg-info"><?= $etudiant_postule['statut'] ?></td>
 											<?php } elseif ($etudiant_postule['statut'] === "Validée") { ?>
 												<td class="text-white bg-success"><?= $etudiant_postule['statut'] ?></td>
 											<?php } else { ?>
-												<td class="text-white bg-warning"><?= $etudiant_postule['statut'] ?></td>
+												<td class="text-white bg-danger"><?= $etudiant_postule['statut'] ?></td>
 											<?php } ?>
 											<td class="">
 												<div class="btn-group-sm">
 													<a href="<?= base_url() ?>/cv/<?= $etudiant_postule['idUtilisateur'] ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
 													<?php if ($etudiant_postule['statut'] !== "Validée") { ?>
-														<a href="#" class="btn btn-success" onclick="valider_poste(<?php echo $etudiant_postule['idOpportunite']; ?>)"><i class="fa fa-check"></i></a>
+														<a href="#" class="btn btn-success" onclick="valider_poste(<?php echo $etudiant_postule['id']; ?>)"><i class="fa fa-check"></i></a>
 													<?php } ?>
 													<?php if ($etudiant_postule['statut'] !== "Rejetée") { ?>
-														<a class="btn btn-danger" href="#" onclick="rejeter_poste(<?php echo $etudiant_postule['idOpportunite']; ?>)"><i class="fa fa-eject"></i></a>
+														<a class="btn btn-danger" href="#" onclick="rejeter_poste(<?php echo $etudiant_postule['id']; ?>)"><i class="fa fa-eject"></i></a>
 													<?php } ?>
 												</div>
 											</td>

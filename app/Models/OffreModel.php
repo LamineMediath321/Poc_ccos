@@ -152,19 +152,19 @@ class OffreModel extends Model
 
     public function valider_poste($id)
     {
-        $this->db->table('opportunite_etudiant')->update(array('statut' => 'Validée'), array('idOpportunite' => $id));
+        $this->db->table('opportunite_etudiant')->update(array('statut' => 'Validée'), array('id' => $id));
     }
 
     public function rejeter_poste($id)
     {
-        $this->db->table('opportunite_etudiant')->update(array('statut' => 'Rejetée'), array('idOpportunite' => $id));
+        $this->db->table('opportunite_etudiant')->update(array('statut' => 'Rejetée'), array('id' => $id));
     }
     //-----------------------------------------------------------------
 
     public function delete_poste($idPoste)
     {
 
-        $this->db->table('opportunite_etudiant')->delete(['idOpportunite' => $idPoste]);
+        $this->db->table('opportunite_etudiant')->delete(['id' => $idPoste]);
     }
     /**End of crud */
 
@@ -213,6 +213,7 @@ class OffreModel extends Model
     {
         return $this->select([
             'STD.nom',
+            'STDOP.id',
             'STD.prenom',
             'E.nomEntreprise',
             'STDOP.statut',
@@ -247,6 +248,7 @@ class OffreModel extends Model
     {
         return $this->select([
             'STD.nom',
+            'STDOP.id',
             'STD.prenom',
             'E.nomEntreprise',
             'STDOP.statut',
