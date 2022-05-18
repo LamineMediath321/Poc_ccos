@@ -175,27 +175,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if ($offers): 
+                            <?php if ($offers) :
                                 $i = 1;
-                                foreach ($offers as $offer):    
+                                foreach ($offers as $offer) :
                             ?>
-                            <tr>
-                                <th scope="row">
-                                    <a href="<?php echo base_url();?>/offre/<?= $offer['idOpportunite']?>">
-                                        <?= $i++ ?>
-                                    </a>
-                                </th>
-                                <td><?= $offer['title'] ?></td>
-                                <td><?= $offer['nomEntreprise'] ?></td>
-                                <td>
-                                <?php 
-                                    setlocale(LC_TIME, 'fr_FR.utf8','french','French_France.1252','fr_FR.ISO8859-1','fra');
-                                    echo strftime("%d %b %G", strtotime($offer['dateCloture']));
-                                ?>
-                                </td>
-                                <td><?= $offer['nombreCandidatures'] ?></td>
-                            </tr>
-                            <?php  
+                                    <tr>
+                                        <th scope="row">
+                                            <a href="<?php echo base_url(); ?>/offre/<?= $offer['idOpportunite'] ?>">
+                                                <?= $i++ ?>
+                                            </a>
+                                        </th>
+                                        <td><?= $offer['title'] ?></td>
+                                        <td><?= $offer['nomEntreprise'] ?></td>
+                                        <td>
+                                            <?php
+                                            setlocale(LC_TIME, 'fr_FR.utf8', 'french', 'French_France.1252', 'fr_FR.ISO8859-1', 'fra');
+                                            echo strftime("%d %b %G", strtotime($offer['dateCloture']));
+                                            ?>
+                                        </td>
+                                        <td><?= $offer['nombreCandidatures'] ?></td>
+                                    </tr>
+                            <?php
                                 endforeach;
                             endif;
                             ?>
@@ -240,7 +240,7 @@
             </div>
         </div>
     </div -->
-    
+
 
 </div>
 <!-- .content -->

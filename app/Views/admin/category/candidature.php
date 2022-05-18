@@ -54,18 +54,18 @@
                                         <?php } elseif ($etudiant_postule['statut'] === "Validée") { ?>
                                             <td class="text-white bg-success"><?= $etudiant_postule['statut'] ?></td>
                                         <?php } else { ?>
-                                            <td class="text-white bg-warning"><?= $etudiant_postule['statut'] ?></td>
+                                            <td class="text-white bg-danger"><?= $etudiant_postule['statut'] ?></td>
                                         <?php } ?>
                                         <td class="">
                                             <div class="btn-group-sm">
                                                 <a href="<?= base_url() ?>/cv/<?= $etudiant_postule['idUtilisateur'] ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
                                                 <?php if ($etudiant_postule['statut'] !== "Validée") { ?>
-                                                    <a href="#" class="btn btn-success" onclick="valider_poste(<?php echo $etudiant_postule['idOpportunite']; ?>)"><i class="fa fa-check"></i></a>
+                                                    <a href="#" class="btn btn-success" onclick="valider_poste(<?php echo $etudiant_postule['id']; ?>)"><i class="fa fa-check"></i></a>
                                                 <?php } ?>
                                                 <?php if ($etudiant_postule['statut'] !== "Rejetée") { ?>
-                                                    <a class="btn btn-danger" href="#" onclick="rejeter_poste(<?php echo $etudiant_postule['idOpportunite']; ?>)"><i class="fa fa-eject"></i></a>
+                                                    <a class="btn btn-danger" href="#" onclick="rejeter_poste(<?php echo $etudiant_postule['id']; ?>)"><i class="fa fa-eject"></i></a>
                                                 <?php } ?>
-                                            </div> 
+                                            </div>
                                         </td>
                                     </tr>
                                 <?php } ?>

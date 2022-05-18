@@ -138,7 +138,7 @@
 
     </div>
     <div class="row ml-3">
-        <h2 class="text-center mb-2">Listes des candidatures de <?= $persinfo['prenom'] ?> <?= $persinfo['nom'] ?></h2>
+        <h2 class="text-center mb-2">Liste des candidatures de <?= $persinfo['prenom'] ?> <?= $persinfo['nom'] ?></h2>
         <div class="col-xl-11 text-center">
             <!-- Start My Candidacies List -->
             <div class="tab-pane">

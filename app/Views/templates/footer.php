@@ -423,15 +423,13 @@
         });
     }
 
-    
 
-    
-    
+
     function contacter(id) {
         $('#formComp')[0].reset(); // reset form on modals
         url = "<?php echo base_url('user/get_email') ?>/" + id;
         $.ajax({
-            url:url,
+            url: url,
             type: "GET",
             dataType: "JSON",
             success: function(data) {
@@ -451,7 +449,7 @@
     function save_contact() {
         let url;
         url = "<?php echo base_url('user/send_mail') ?>";
-       
+
         let data = new FormData($('#formComp')[0]);
 
         // ajax adding data to database
@@ -483,7 +481,7 @@
         $('#formComp')[0].reset(); // reset form on modals
         $('#add_comp_modal').modal('show'); // show bootstrap modal
 
-        
+
     }
 
 
@@ -511,17 +509,22 @@
                 //if success close modal and reload ajax table
                 $('#add_comp_modal').modal('hide');
                 location.reload(); // for reload a page
-               
+
             },
             error: function(jqXHR, textStatus, errorThrown) {
-              alert("error");
-
+                $("#error").text('Ce champ est obligatoire');
+                $("#error").attr('class', 'text-danger mt-2');
+                $("#icon").attr('class', 'fa fa-check');
 
             }
         });
     }
 
-   
+    function hideMessage(id) {
+        $("#error").text("");
+    }
+
+
 
     function save_ent() {
         let url;
@@ -899,7 +902,7 @@
         });
     }
 
-    
+
     function save_cv() {
         let url;
         if (save_method == 'add') {
@@ -932,7 +935,7 @@
         });
     }
 
-    
+
 
     //  3.2 Formation
     function add_formation() {
