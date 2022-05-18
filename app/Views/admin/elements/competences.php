@@ -149,7 +149,7 @@ endif;
 
                         <div class="row">
                             <div class="col-6 col-sm-4">
-                                <p id="error"></p>
+                                <p id="error"></p><i class="fa fa-eye"></i>
                             </div>
                         </div>
                     </div>
