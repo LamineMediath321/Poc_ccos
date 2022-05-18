@@ -141,23 +141,18 @@ endif;
                         <div class="row">
 
                             <div class="col-12 col-sm-6">
-                                <label for="intitule">Intitule</label>
+                                <label for="intitule" style="font-weight:bold;">Intitule</label>
                                 <input type="text" class="form-control" name="intitule" id="intitule" onfocus="hideMessage()">
 
                             </div>
                         </div>
 
                         <div class="row">
-
                             <div class="col-6 col-sm-4">
-                                <p id="error"></p>
+                                <p id="error" style=" font-style:italic;"></p>
                             </div>
                         </div>
                     </div>
-
-
-
-
                     <div class="modal-footer">
                         <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>

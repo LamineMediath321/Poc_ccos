@@ -97,10 +97,16 @@
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label for="field_title">Intitule</label>
-                            <input type="text" class="form-control" name="field_title" id="field_title" value="">
+                            <input type="text" class="form-control" name="field_title" id="field_title" value="" onfocus="hideMessage()">
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                            <div class="col-6 col-sm-4">
+                                <p id="error" style=" font-style:italic;"></p>
+                            </div>
+                </div>
+                
                 <div class="modal-footer">
                     <input type="hidden" name="idField" class="form-control" id="idField">                                       
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
