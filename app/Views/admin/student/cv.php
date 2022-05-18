@@ -6,8 +6,9 @@
             <div class="top-breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Basic Table</li>
+                        <li class="breadcrumb-item"><a href="">
+                            </a></li>
+                        <li class="breadcrumb-item active" aria-current="page"></li>
                     </ol>
                 </nav>
             </div>
@@ -41,9 +42,9 @@
                         </ul>
                     </div>
                     <div class="skill">
-                        <h3>Competences</h3>
-                        <?php if ($userSkills) {
-                            foreach ($userSkills as $skill) { ?>
+                        <?php if ($userSkills) { ?>
+                            <h3>Competences</h3>
+                            <?php foreach ($userSkills as $skill) { ?>
                                 <p><?= $skill['intitule'] ?></p>
                                 <div class="progress mb-3">
                                     <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -52,14 +53,13 @@
                         } ?>
                     </div>
                     <div class="languages">
-                        <h3>Langues</h3>
-                        <?php if ($userLanguages) {
-                            foreach ($userLanguages as $language) { ?>
-                                <?= $language['intitule'] ?> :
-                                <small><?= $language['niveau'] ?></small>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                        <?php if ($userLanguages) { ?>
+                            <h3>Langues</h3>
+                            <?php foreach ($userLanguages as $language) { ?>
+                                <p> <?= $language['intitule'] ?> :
+                                    <span class="badge badge-info"><small><?= $language['niveau'] ?></small></span>
+                                </p>
+
                         <?php }
                         } ?>
                     </div>
@@ -68,7 +68,7 @@
         </div>
         <div class="col-lg-9">
             <div class="card right-profile-card">
-                <div class="card-header alert-primary">
+                <div class="card-header alert-dark">
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-selected="true">Experience Professionnelle</a>
@@ -76,9 +76,7 @@
                         <li class="nav-item">
                             <a class="nav-link" id="pills-education-tab" data-toggle="pill" href="#pills-education" role="tab" aria-selected="false">Formation</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="pills-timeline-tab" data-toggle="pill" href="#pills-timeline" role="tab" aria-selected="false">Timeline</a>
-                        </li>
+
                     </ul>
                 </div>
                 <div class="card-body">
@@ -102,95 +100,98 @@
                                             </span></h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</br><?= $experience['realisation'] ?></p>
                                     </div>
-                            <?php }
-                            } ?>
+                                <?php }
+                            } else { ?>
+                                <div class="text-center alert-info">Pas d'informations sur son Expérience</div>
+                            <?php } ?>
                         </div>
                         <div class="tab-pane fade" id="pills-education" role="tabpanel">
-                            <div class="work-container">
-                                <h3>The Art Institute :- New Yourk</h3>
-                                <h4><i class="far fa-calendar-alt"></i>Jan 2017 to <span class="badge badge-info">Current</span></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                            <div class="work-container">
-                                <h3>Eitech :- New Jersy</h3>
-                                <h4><i class="material-icons">date_range</i>Jan 2017 to <span class="badge badge-info">Current</span></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                            <div class="work-container">
-                                <h3>School of Visual Arts :- Chicago</h3>
-                                <h4><i class="material-icons">date_range</i>Jan 2017 to <span class="badge badge-info">Current</span></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
+                            <?php if ($formations) {
+                                foreach ($formations as $formation) { ?>
+                                    <div class="work-container">
+                                        <h3><?= $formation['etablissement'] ?></h3>
+                                        <p class="">
+                                            <span class=""><?= $formation['niveau_etude'] ?> en <?= $formation['domaine'] ?></span>
+                                        </p>
+                                        <h4><i class="far fa-calendar-alt"></i> <?php
+                                                                                setlocale(LC_TIME, 'fr_FR.utf8', 'french', 'French_France.1252', 'fr_FR.ISO8859-1', 'fra');
+                                                                                echo strftime("%b %G", strtotime($formation['dateDebut']));
+                                                                                ?> à <span class="badge badge-info"> <?php
+                                                                                                                        setlocale(LC_TIME, 'fr_FR.utf8', 'french', 'French_France.1252', 'fr_FR.ISO8859-1', 'fra');
+                                                                                                                        echo strftime("%b %G", strtotime($formation['dateFin']));
+                                                                                                                        ?></span></h4>
+                                    </div>
+                                <?php }
+                            } else { ?>
+                                <div class="text-center alert-info">Pas d'information sur sa formation</div>
+                            <?php } ?>
                         </div>
-                        <div class="tab-pane fade" id="pills-timeline" role="tabpanel">
-                            <div class="row">
-                                <div class="timeline-centered">
-                                    <div class="timeline-entry">
-                                        <div class="timeline-entry-inner">
-                                            <div class="timeline-icon bg-success">
-                                                <i class="entypo-feather"></i>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row ml-3">
+        <h2 class="text-center mb-2">Listes des candidatures de <?= $persinfo['prenom'] ?> <?= $persinfo['nom'] ?></h2>
+        <div class="col-xl-11 text-center">
+            <!-- Start My Candidacies List -->
+            <div class="tab-pane">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <td>Nom entreprise</td>
+                                    <td>Intutile offre</td>
+                                    <td>Statut</td>
+                                    <td>Action(s)</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($mycandidacies as $offer) { ?>
+                                    <tr>
+                                        <td><?= $offer['nomEntreprise'] ?></td>
+                                        <td><?= $offer['title'] ?></td>
+
+
+                                        <td>
+                                            <?php if ($offer['statut'] === "Validée") { ?>
+                                                <span class="alert-success"><?php echo $offer['statut'] ?></span>
+                                            <?php } elseif ($offer['statut'] === "Rejetée") { ?>
+                                                <span class="alert-danger"><?php echo $offer['statut'] ?></span>
+                                            <?php } else { ?>
+                                                <span class="alert-info"><?php echo $offer['statut'] ?></span>
+                                            <?php } ?>
+                                        </td>
+                                        <td class="">
+                                            <div class="btn-group-sm">
+                                                <a class="btn btn-primary" href="<?php echo base_url(); ?>/offre/<?= $offer['idOpportunite'] ?>"><i class="fa fa-eye"></i>
+                                                </a>
+                                                <?php if ($offer['statut'] == "En attente") { ?>
+                                                    <a class="btn btn-danger" href="#" onclick="delete_poste(<?php echo $offer['idOpportunite']; ?>)"><i class="fa fa-trash-o"></i></a>
+                                                <?php } ?>
                                             </div>
-                                            <div class="timeline-label">
-                                                <h2><a href="#">Art Ramadani</a> <span>posted a status update</span></h2>
-                                                <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-entry">
-                                        <div class="timeline-entry-inner">
-                                            <div class="timeline-icon bg-secondary">
-                                                <i class="entypo-suitcase"></i>
-                                            </div>
-                                            <div class="timeline-label">
-                                                <h2><a href="#">Job Meeting</a></h2>
-                                                <p>You have a meeting at <strong>Laborator Office</strong> Today.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-entry">
-                                        <div class="timeline-entry-inner">
-                                            <div class="timeline-icon bg-info">
-                                                <i class="entypo-location"></i>
-                                            </div>
-                                            <div class="timeline-label">
-                                                <h2><a href="#">Arlind Nushi</a> <span>checked in at</span> <a href="#">Laborator</a></h2>
-                                                <blockquote>Great place, feeling like in home.</blockquote>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-entry">
-                                        <div class="timeline-entry-inner">
-                                            <div class="timeline-icon bg-warning">
-                                                <i class="entypo-camera"></i>
-                                            </div>
-                                            <div class="timeline-label">
-                                                <h2><a href="#">Arber Nushi</a> <span>changed his</span> <a href="#">Profile Picture</a></h2>
-                                                <blockquote>Pianoforte principles our unaffected not for astonished travelling are particular.</blockquote>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-entry begin">
-                                        <div class="timeline-entry-inner">
-                                            <div class="timeline-icon" style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);">
-                                                <i class="entypo-flight"></i> +
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+            <!-- End My Candidacies List -->
+
         </div>
     </div>
 </div>
 
 <style>
-    body {
-        background: #DCDCDC;
-    }
-
     /*profile page*/
 
     .left-profile-card .user-profile {

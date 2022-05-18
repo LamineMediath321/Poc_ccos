@@ -3,14 +3,15 @@
 namespace App\Controllers;
 
 use App\Models\CvModel;
-use App\Models\DomaineModel;
-use App\Models\ExperienceModel;
-use App\Models\FormationModel;
-use App\Models\LanguageModel;
-use App\Models\CompetenceModel;
 use App\Models\UserModel;
-use App\Models\EtablissementModel;
+use App\Models\OffreModel;
 use App\Models\ProfilModel;
+use App\Models\DomaineModel;
+use App\Models\LanguageModel;
+use App\Models\FormationModel;
+use App\Models\CompetenceModel;
+use App\Models\ExperienceModel;
+use App\Models\EtablissementModel;
 
 class Cv extends BaseController
 {
@@ -52,26 +53,21 @@ class Cv extends BaseController
 	{
 
 		$data = $this->getStudentResumeData($student_user_id);
-		if (session()->get('role') != 'etudiant'){
+
+		if (session()->get('role') != 'etudiant') {
+			$data['mycandidacies'] 	=	(new OffreModel())->getStudentCandidacies($student_user_id);
 			$this->adminPage('admin/student/cv', $data);
-
-
-		}
-		else{
+		} else {
 			$this->charger('resume', $data);
-
-
 		}
-
-
 	}
 
-	public function get_personal_infos($id){
+	public function get_personal_infos($id)
+	{
 		$student_id = (new CvModel())->getStudentId($id);
 		$data = (new CvModel())->getPersinfo($student_id);
 
 		echo json_encode($data);
-
 	}
 
 	public function resumes()
@@ -146,7 +142,7 @@ class Cv extends BaseController
 				'idProfil'   => $profile
 			];
 		}
-	
+
 		if ($model->add_persinfos($data, $userProfiles)) {
 			echo json_encode(array("status" => TRUE, "message" => "Entreprise ajouté"));
 		} else {
@@ -201,7 +197,7 @@ class Cv extends BaseController
 		$data['photo'] = $name;
 
 
-		
+
 
 		// foreach ($profiles as $profile) {
 		// 	$userProfiles[] = [

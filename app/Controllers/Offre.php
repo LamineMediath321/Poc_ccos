@@ -84,20 +84,25 @@ class Offre extends BaseController
 
 	public function show($id)
 	{
+		//A gere apres pour la pagination
 		$data = [];
-    	$this->page = (int)(($this->request->getVar('page') !== null) ? $this->request->getVar('page') : 1) - 1;
-    	$offset =  PER_PAGE * $this->page;
+		$this->page = (int)(($this->request->getVar('page') !== null) ? $this->request->getVar('page') : 1) - 1;
+		$offset =  PER_PAGE * $this->page;
 		$total = count($this->model->getOfferCandidacies($id));
 		$this->pager->makeLinks($this->page, PER_PAGE, $total);
-    	$data['pager'] = $this->pager;
+		$data['pager'] = $this->pager;
 		$etudiantId = (new CvModel())->getStudentId(session('id'));
 		$data['offer'] 			=	$this->model->getOf_by_id($id);
 		$data['haveApply'] 		=	$this->model->haveApply($etudiantId, $id);
 		$data['ofcandidacies']	=	$this->model->getOfferCandidacies($id);
+		$data['total'] = $total;
+		$data['lastsOffers'] = $this->model->lastsOffers();
+		$data['nbLastsOffers'] = count($this->model->lastsOffers());
+
 
 		// dd($data['haveApply']);
 		if (session()->get('isAdmin'))
-			$this->adminPage('offer_show', $data);
+			$this->adminPage('admin/offre/offer_show', $data);
 		else
 			$this->charger('offer_show', $data);
 	}

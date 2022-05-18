@@ -88,7 +88,7 @@ class OffreModel extends Model
             ->join('niveauetude AS NE', 'O.idNiveauEtude = NE.idNiveauEtude', 'left')
             ->join('ville AS V', 'O.idVille = V.idVille', 'left')
             ->join('profil AS P', 'O.idProfil = P.idProfil', 'left')
-            ->limit(8)
+            ->limit(10)
             ->get()->getResultArray();
     }
 
@@ -157,7 +157,7 @@ class OffreModel extends Model
 
     public function rejeter_poste($id)
     {
-        $this->db->table('opportunite_etudiant')->update(array('statut' => 'Rejetée') , array('idOpportunite' => $id));
+        $this->db->table('opportunite_etudiant')->update(array('statut' => 'Rejetée'), array('idOpportunite' => $id));
     }
     //-----------------------------------------------------------------
 
@@ -243,7 +243,7 @@ class OffreModel extends Model
             ->first();
     }
 
-    public function getOfferCandidacies($offer_id,$perPage = null, $offset = null)
+    public function getOfferCandidacies($offer_id, $perPage = null, $offset = null)
     {
         return $this->select([
             'STD.nom',
