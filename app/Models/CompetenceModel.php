@@ -82,6 +82,11 @@ class CompetenceModel extends Model
         return $this->where('idCompetence', $id)
             ->get()->getRow();
     }
+    public function get_competence($attribute)
+    {
+        return $this->where('intitule', $attribute)
+            ->get()->getRow();
+    }
 
     public function update_competence($id, $data)
     {

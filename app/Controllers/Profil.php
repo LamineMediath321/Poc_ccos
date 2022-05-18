@@ -33,13 +33,27 @@ class Profil extends BaseController
             'intitule'  =>  $this->request->getVar('profile_title'),
             'idDomaine' =>  $this->request->getVar('field')
         );
+        $profil = $this->model->get_profile_by_intitule($data['intitule']);
+
+
+        if($this->request->getMethod() == 'post'){
+			$rules = [
+				'profile_title' => 'required',
+                'field' =>  'required'
+
+			];
+			if($this->validate($rules)) {
+                if(empty($profil))
+                    $this->model->insert($data);
+			}
+			else{
+				$data['validation'] = $this->validator;
+				echo_json($data);
+
+			}
+		}
         
-        if ($this->model->insert($data)){
-            echo json_encode(array("status" => TRUE, "message" => "Profil ajouté"));
-        }
-        else {
-            echo json_encode(array("status" => false, "message" => "Echec"));
-        }
+       
     }
 
     public function edit_profile()
@@ -51,11 +65,24 @@ class Profil extends BaseController
                 'idDomaine' =>  $this->request->getVar('field')
         );
 
-        if ($this->model->edit_profile(array('idProfil' => $this->request->getVar('idProfile')), $data))
-            echo json_encode(array("status" => TRUE, "message" => "Domaine modifié"));
-        
-        else 
-            echo json_encode(array("status" => false, "message" => "Failed to update"));
+           if($this->request->getMethod() == 'post'){
+			    $rules = [
+                    'profile_title' => 'required',
+                    'field' =>  'required'
+
+			    ];
+			    if($this->validate($rules)) {
+                    if(empty($profil))
+                        $this->model->edit_profile(array('idProfil' => $this->request->getVar('idProfile')), $data);
+			    }
+			    else{
+                    $data['validation'] = $this->validator;
+                    echo_json($data);
+
+			    }
+		}
+
+      
     }
 
     public function delete_field($id) 

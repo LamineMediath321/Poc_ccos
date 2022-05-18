@@ -30,6 +30,11 @@ class ProfilModel extends Model{
             ->get()->getRow();
     }
 
+    public function get_profile_by_intitule($attribute) {
+        return $this->where('intitule', $attribute)
+            ->get()->getRow();
+    }
+
     public function edit_profile($id, $data)
     {
         $this->db->table($this->table)->update($data, $id);
