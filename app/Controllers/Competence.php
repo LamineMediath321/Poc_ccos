@@ -105,21 +105,17 @@ class Competence extends BaseController
 			'intitule' => $this->request->getVar('intitule'),
 		);
 
-		if($this->request->getMethod() == 'post'){
+		if ($this->request->getMethod() == 'post') {
 			$rules = [
 				'intitule' => 'required'
 			];
-			if($this->validate($rules)) {
+			if ($this->validate($rules)) {
 				$this->model->update_competence(array('idCompetence' => $this->request->getVar('idCompetence')), $data);
-			}
-			else{
+			} else {
 				$data['validation'] = $this->validator;
 				echo_json($data);
-
 			}
 		}
-
-	
 	}
 
 
@@ -135,21 +131,17 @@ class Competence extends BaseController
 		$comp = $this->model->get_competence($data['intitule']);
 
 
-		if($this->request->getMethod() == 'post'){
+		if ($this->request->getMethod() == 'post') {
 			$rules = [
 				'intitule' => 'required'
 			];
-			if($this->validate($rules)) {
-				if(empty($comp))
+			if ($this->validate($rules)) {
+				if (empty($comp))
 					$this->model->add_competence($data);
-			}
-			else{
+			} else {
 				$data['validation'] = $this->validator;
 				echo_json($data);
-
 			}
 		}
-
-		
 	}
 }
