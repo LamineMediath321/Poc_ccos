@@ -102,9 +102,9 @@
                     </div>
                 </div>
                 <div class="row">
-                            <div class="col-6 col-sm-4">
-                                <p id="error" style=" font-style:italic;"></p>
-                            </div>
+                    <div class="col-6 col-sm-4">
+                        <p id="error" style=" font-style:italic;"></p>
+                     </div>
                 </div>
                 
                 <div class="modal-footer">

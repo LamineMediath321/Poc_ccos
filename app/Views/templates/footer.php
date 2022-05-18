@@ -1554,8 +1554,9 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log(data);
-                alert('Une erreur est survenue');
+                $("#error").text('Ce champ est obligatoire');
+                $("#error").attr('class', 'text-danger mt-2');
+                $("#icon").attr('class', 'fa fa-check');
             }
         });
     }

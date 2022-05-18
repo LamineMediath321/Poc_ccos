@@ -100,19 +100,24 @@
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label for="profile_title">Intitule</label>
-                            <input type="text" class="form-control" name="profile_title" id="profile_title" value="">
+                            <input type="text" class="form-control" name="profile_title" id="profile_title" value="" onfocus="hideMessage()">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label for="">Domaine</label>
-                            <select name="field" id="" class="select2 form-control custom-select">
+                            <select name="field" id="" class="select2 form-control custom-select"  onfocus="hideMessage()">
                                 <option value="">Sélectionnez le domaine</option>
                                 <?Php  foreach($fields as $field):  ?>
                                     <option value="<?php  echo $field['idDomaine']  ?>"><?php  echo $field['intitule']  ?></option>
                                 <?php endforeach;  ?>
                             </select>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-sm-4">
+                        <p id="error" style=" font-style:italic;"></p>
                     </div>
                 </div>
                 <div class="modal-footer">
