@@ -471,7 +471,8 @@
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                alert('Une erreur est survenue');
+                alert('Vous ne pouvez pas envoyer de mail sans objet ni contenu!');
+                // location.reload();
             }
         });
     }

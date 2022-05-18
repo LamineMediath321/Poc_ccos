@@ -302,26 +302,41 @@ class User extends BaseController
 			'email' => $this->request->getVar('email'),
 		);
 
-		$message = $data['contenu'];
-		$email = \Config\Services::email();
-		$email->setFrom('aidara.ndeye-khady@ugb.edu.sn', 'Ndeye khady Aidara');
-		$email->setTo($data['email']);
-		$email->setSubject($data['objet']);
-		$email->setMessage($message);//your message here
-		$data['email'] = $email;
+		if($this->request->getMethod() == 'post'){
+			$rules = [
+				'objet' => 'required',
+				'contenu' => 'required',
+			];
+			if($this->validate($rules)) {
+				$message = $data['contenu'];
+				$email = \Config\Services::email();
+				$email->setFrom('aidara.ndeye-khady@ugb.edu.sn', 'Ndeye khady Aidara');
+				$email->setTo($data['email']);
+				$email->setSubject($data['objet']);
+				$email->setMessage($message);//your message here
+				$data['email'] = $email;
 
 
 		
-		// $email->setCC('another@emailHere');//CC
-		// $email->setBCC('thirdEmail@emialHere');// and BCC
-		// $filename = '/img/yourPhoto.jpg'; //you can use the App patch 
-		// $email->attach($filename);
+			// $email->setCC('another@emailHere');//CC
+			// $email->setBCC('thirdEmail@emialHere');// and BCC
+			// $filename = '/img/yourPhoto.jpg'; //you can use the App patch 
+			// $email->attach($filename);
+				
+				$email->send();
+				$email->printDebugger(['headers']);
+				echo json_encode($data);
+
+			}
+				
+			else{
+				$data['validation'] = $this->validator;
+				echo_json($data);
+
+			}
+		
 			
-		$email->send();
-		$email->printDebugger(['headers']);
-
-
-		echo json_encode($data);
+		}
 	}
 		
 
