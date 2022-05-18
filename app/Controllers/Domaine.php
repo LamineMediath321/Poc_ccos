@@ -4,7 +4,16 @@ use App\Controllers\BaseController;
 use App\Models\DomaineModel;
 
 class Domaine extends BaseController 
+
+
 {
+
+    public function __construct()
+	{
+		$this->model = new DomaineModel();
+		$this->pager = service('pager');
+	}
+
     public function index()
     {
         $data['fields'] = (new DomaineModel)->getFields();
@@ -29,13 +38,24 @@ class Domaine extends BaseController
             'intitule' => $this->request->getVar('field_title'),
             
         );
-        
-        if ((new DomaineModel())->insert($data)){
-            echo json_encode(array("status" => TRUE, "message" => "Domaine ajouté"));
-        }
-        else {
-            echo json_encode(array("status" => false, "message" => "Echec"));
-        }
+
+        $domaine = $this->model->get_domaine($data['intitule']);
+
+
+		if($this->request->getMethod() == 'post'){
+			$rules = [
+				'field_title' => 'required'
+			];
+			if($this->validate($rules)) {
+				if(empty($domaine))
+					$this->model->insert($data);
+			}
+			else{
+				$data['validation'] = $this->validator;
+				echo_json($data);
+
+			}
+		}
     }
 
     public function edit_field()
@@ -45,12 +65,20 @@ class Domaine extends BaseController
         $data = array(
                 'intitule' => $this->request->getVar('field_title')
         );
+        if($this->request->getMethod() == 'post'){
+			$rules = [
+				'field_title' => 'required'
+			];
+			if($this->validate($rules)) {
+				(new DomaineModel())->edit_field(array('idDomaine' => $this->request->getVar('idField')), $data);
+			}
+			else{
+				$data['validation'] = $this->validator;
+				echo_json($data);
 
-        if ((new DomaineModel())->edit_field(array('idDomaine' => $this->request->getVar('idField')), $data))
-            echo json_encode(array("status" => TRUE, "message" => "Domaine modifié"));
-        
-        else 
-            echo json_encode(array("status" => false, "message" => "Failed to update"));
+			}
+		}
+       
     }
 
     public function delete_field($id) 

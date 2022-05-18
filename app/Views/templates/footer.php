@@ -1438,14 +1438,18 @@
         } else if (save_method == 'edit') {
             url = "<?php echo base_url('domaine/edit_field') ?>";
         }
+        let data = new FormData($('#field_form')[0]);
 
 
         // ajax adding data to database
         $.ajax({
             url: url,
             type: "POST",
-            data: $('#field_form').serialize(),
-            dataType: "JSON",
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: data,
+            dataType: "text",
             // async: false,
             success: function(data) {
                 console.log(data);
