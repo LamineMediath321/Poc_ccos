@@ -32,7 +32,7 @@ class TypeContratModel extends Model
     }
     
     public function get_typeContrat($attribute) {
-        return $this->where('intituleTC', $attribute)
+        return $this->where('intitule', $attribute)
             ->get()->getRow();
     }
 

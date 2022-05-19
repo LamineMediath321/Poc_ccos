@@ -534,9 +534,22 @@
         $("#error").text('Cela semble bon!');
         $("#error").attr('class', 'col-5 text-success mt-2');
         return true;
-
     }
 
+    function ValiderInputTypeContrat() {
+        let input = $('#intituleTC').val();
+        if (input.length == 0) {
+            $('#intituleTC').attr('style', ' border: 2px solid red;border-radius: 4px;');
+            $("#icon").attr('class', '');
+            $("#error").text('');
+            return false;
+        }
+        $('#intituleTC').attr('style', ' border: 2px solid green;border-radius: 4px;');
+        $("#icon").attr('class', 'fa fa-check-circle text-success mt-2');
+        $("#error").text('Cela semble bon!');
+        $("#error").attr('class', 'col-5 text-success mt-2');
+        return true;
+    }
 
 
     function save_ent() {
@@ -1389,9 +1402,8 @@
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     $("#error").text('Ce champ est obligatoire');
-                    $("#error").attr('class', 'text-danger mt-2');
-                    $("#icon").attr('class', 'fa fa-check');
-
+                    $("#error").attr('class', 'col-5 text-danger mt-2');
+                    $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
                 }
         });
     }

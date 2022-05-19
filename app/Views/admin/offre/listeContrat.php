@@ -87,14 +87,14 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label for="intituleTC">Intitule</label>
-                                <input type="text" class="form-control" name="intituleTC" id="intituleTC" value="" onfocus="hideMessage()">
+                                <input type="text" class="form-control" name="intituleTC" id="intituleTC" value="" onfocus="hideMessage()" onkeyup="ValiderInputTypeContrat()">
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 col-sm-4">
-                            <p id="error" style=" font-style:italic;"></p>
-                        </div>
+                        
+                            <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
