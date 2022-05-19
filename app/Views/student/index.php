@@ -217,7 +217,7 @@
                         </div>
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
-                                <label for="fstname">Prenom</label>
+                                <label for="fstname">Prénom</label>
                                 <input type="text" class="form-control" name="fstname" id="fstname" value="" readonly>
                             </div>
                         </div>
@@ -229,7 +229,7 @@
                         </div>
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
-                                <label class="bmd-label-floating" for="phone">Numero de telephone</label>
+                                <label class="bmd-label-floating" for="phone">Numéro de téléphone</label>
                                 <input type="tel" class="form-control" name="phone" id="phone" value="">
                             </div>
                         </div>
@@ -274,7 +274,7 @@
                         </div>
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
-                                <label class="bmd-label-floating" for="natnalty">Nationnalite</label>
+                                <label class="bmd-label-floating" for="natnalty">Nationalité</label>
                                 <input type="text" class="form-control" name="natnalty" id="natnalty" value="">
                             </div>
                         </div>

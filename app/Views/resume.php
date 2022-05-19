@@ -265,7 +265,7 @@
                     </div>   
                     <div class="col-xs-9 col-sm-6">
                         <div class="form-group">
-                            <label class="bmd-label-floating"  for="phone">Numero de telephone</label>
+                            <label class="bmd-label-floating"  for="phone">Numero de téléphone</label>
                             <input type="tel" class="form-control" name="phone" id="phone" value="">
                         </div>
                     </div>
@@ -302,7 +302,7 @@
                     </div>
                     <div class="col-xs-9 col-sm-6">
                         <div class="form-group">
-                            <label class="bmd-label-floating"  for="natnalty">Nationnalite</label>
+                            <label class="bmd-label-floating"  for="natnalty">Nationnalité</label>
                             <input type="text" class="form-control" name="natnalty" id="natnalty" value="">
                         </div>
                     </div>
@@ -418,7 +418,7 @@
     <div class="modal-dialog modal-lg">
     <div class="modal-content ">
         <div class="modal-header">
-            <h4 class="modal-title">Ajouter une experience professionnelle</h4>
+            <h4 class="modal-title">Ajouter une expérience professionnelle</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <form method="post" action="javascript:void(0)" id="experience_form" enctype="multipart/form-data" class="form-horizontal">
@@ -473,7 +473,7 @@
     <div class="modal-dialog modal-lg">
     <div class="modal-content ">
         <div class="modal-header">
-            <h4 class="modal-title">Ajout des competences</h4>
+            <h4 class="modal-title">Ajout des compétences</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <form method="post" action="javascript:void(0)" id="skill_form" enctype="multipart/form-data" class="form-horizontal">
@@ -481,7 +481,7 @@
                 <div class="row">
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
-                            <label for="skill">Competences</label>
+                            <label for="skill">Compétences</label>
                             <select name="skills[]" multiple class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="skill">
                                 <option>Choisissez...</option>
 
@@ -518,7 +518,7 @@
                         <div class="form-group">
                             <label for="language">Langue</label>
                             <select name="language" class="select2 form-control custom-select" id="language">
-                                <option>Selectionnez la langue...</option>
+                                <option>Sélectionnez la langue...</option>
 
                                 <?Php  foreach($languages as $language):  ?>
                                     <option value="<?= $language['idLangue']  ?>"><?= $language['intitule']  ?></option>
@@ -530,7 +530,7 @@
                         <div class="form-group">
                             <label for="level">Niveau</label>
                             <select name="level" class="select2 form-control" data-container="select_contain" id="level">
-                                <option>Selectionnez votre niveau de comprehension...</option>
+                                <option>Sélectionnez votre niveau de comprehension...</option>
                                 <option value="Moyen">Moyen</option>
                                 <option value="Assez bien">Assez bien</option>
                                 <option value="Tres bien">Tres bien</option>
