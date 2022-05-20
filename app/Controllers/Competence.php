@@ -122,7 +122,7 @@ class Competence extends BaseController
 	public function add_competence()
 	{
 		helper('form', 'url');
-
+ 
 		$data = array(
 			'intitule' => $this->request->getVar('intitule'),
 
