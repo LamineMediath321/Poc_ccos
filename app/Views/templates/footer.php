@@ -515,14 +515,18 @@
     function hideMessage() {
         $("#error").text("");
         $("#icon").attr('class', '');
+        $("#error_2").text("");
+
     }
 
-    function ValidateInput() {
+    function validateInput() {
         let input = $('#intitule').val();
-        if (input.length == 0) {
-            $('#intitule').attr('style', ' border: 1px solid red;border-radius: 4px;');
-            $("#icon").attr('class', '');
-            $("#error").text('');
+        let regexName = /^[\w\s-]{3,20}$/;
+        if ((input.length == 0) || (regexName == false)) {
+            $('#intitule').attr('style', ' border: 2px solid red;border-radius: 4px;');
+            $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
+            $("#error").text('Le champ est vide !');
+            $("#error").attr('class', 'col-5 text-danger mt-2');
             return false;
         }
         $('#intitule').attr('style', ' border: 1px solid green;border-radius: 4px;');
@@ -601,8 +605,8 @@
         $("#error").attr('class', 'col-5 text-success mt-2');
         return true;
     }
-    
-    
+
+
 
     function save_ent() {
         let url;
@@ -630,7 +634,7 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                alert('Une erreur est survenue');
+                console.log(data);
             }
         });
     }
@@ -1187,8 +1191,9 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log(jqXHR);
-                alert('Une erreur est survenue');
+                // console.log(jqXHR);
+                $("#error").text('Ce champ est obligatoire');
+                $("#error").attr('class', 'col-5 text-danger mt-2 text-center');
             }
         });
     }
@@ -1222,7 +1227,8 @@
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR);
-                alert('Une erreur est survenue');
+                $("#error_2").text('Veillez selectionner une langue ou verifier si la langue existe deja dans vos competences 🤨');
+                $("#error_2").attr('class', 'col-5 text-danger mt-2 text-center');
             }
         });
     }
@@ -1445,26 +1451,26 @@
         let data = new FormData($('#formtc')[0]);
 
         // ajax adding data to database
-            $.ajax({
-                url: url,
-                type: "POST",
-                contentType: false,
-                cache: false,
-                processData: false,
-                data: data,
-                dataType: "text",
-                // async: false,
-                success: function(data) {
-                    //if success close modal and reload ajax table
-                    $('#modal_form_tc').modal('hide');
-                    location.reload(); // for reload a page
+        $.ajax({
+            url: url,
+            type: "POST",
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: data,
+            dataType: "text",
+            // async: false,
+            success: function(data) {
+                //if success close modal and reload ajax table
+                $('#modal_form_tc').modal('hide');
+                location.reload(); // for reload a page
 
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    $("#error").text('Ce champ est obligatoire');
-                    $("#error").attr('class', 'col-5 text-danger mt-2');
-                    $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
-                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#error").text('Ce champ est obligatoire');
+                $("#error").attr('class', 'col-5 text-danger mt-2');
+                $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
+            }
         });
     }
 
