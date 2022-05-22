@@ -96,11 +96,13 @@
         </div>
         <div class="modal-body form">
             <form method="post" action="javascript:void(0)" id="profile_form" enctype="multipart/form-data" class="form-horizontal">
+               
+            <div class="modal-body form">
                 <div class="row">
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label for="profile_title">Intitule</label>
-                            <input type="text" class="form-control" name="profile_title" id="profile_title" value="" onfocus="hideMessage()">
+                            <input type="text" class="form-control" name="profile_title" id="profile_title" value="" onfocus="hideMessage()" onkeyup="ValiderInputProfile()">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
@@ -116,10 +118,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 col-sm-4">
-                        <p id="error" style=" font-style:italic;"></p>
-                    </div>
+                        
+                 <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
                 </div>
+            </div>
                 <div class="modal-footer">
                     <input type="hidden" name="idProfile" class="form-control" id="idProfile">                                       
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>

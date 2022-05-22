@@ -93,20 +93,22 @@
         </div>
         <div class="modal-body form">
             <form method="post" action="javascript:void(0)" id="field_form" enctype="multipart/form-data" class="form-horizontal">
-                <div class="row">
+               
+            <div class="modal-body form">
+
+            <div class="row">
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label for="field_title">Intitule</label>
-                            <input type="text" class="form-control" name="field_title" id="field_title" value="" onfocus="hideMessage()">
+                            <input type="text" class="form-control" name="field_title" id="field_title" value="" onfocus="hideMessage()" onkeyup="ValiderInputField()">
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 col-sm-4">
-                        <p id="error" style=" font-style:italic;"></p>
-                     </div>
+                        
+                 <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
                 </div>
-                
+                    </div>
                 <div class="modal-footer">
                     <input type="hidden" name="idField" class="form-control" id="idField">                                       
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
