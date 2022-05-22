@@ -515,6 +515,8 @@
     function hideMessage() {
         $("#error").text("");
         $("#icon").attr('class', '');
+        $("#error_2").text("");
+
     }
 
     function validateInput() {
@@ -1212,7 +1214,8 @@
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR);
-                alert('Une erreur est survenue');
+                $("#error_2").text('Veillez selectionner une langue ou verifier si la langue existe deja dans vos competences 🤨');
+                $("#error_2").attr('class', 'col-5 text-danger mt-2 text-center');
             }
         });
     }

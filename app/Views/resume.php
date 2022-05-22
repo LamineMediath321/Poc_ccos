@@ -522,11 +522,11 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label for="language">Langue</label>
-                                <select name="language" class="select2 form-control custom-select" id="language">
+                                <select name="language" class="select2 form-control custom-select" id="language" onchange="hideMessage()">
                                     <option>Sélectionnez la langue...</option>
 
                                     <?Php foreach ($languages as $language) :  ?>
-                                        <option value="<?= $language['idLangue']  ?>"><?= $language['intitule']  ?></option>
+                                        <option value="<?= $language['idLangue']  ?>"><?= $language['intitule'] ?></option>
                                     <?php endforeach;  ?>
                                 </select>
                             </div>
@@ -547,6 +547,11 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <p id="error_2" style=" font-style:italic;"></p>
+                </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                     <button type="submit" id="btn_save" onclick="save_language()" class="btn btn-primary">Enregistrer</button>
