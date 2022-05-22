@@ -150,6 +150,7 @@ endif;
                         <div class="row">
                             <p id="error" style=" font-style:italic;"></p>
                         </div>
+
                         <div class="modal-footer">
                             <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>

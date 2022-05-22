@@ -59,6 +59,44 @@
             </div>
         </form>
     </div>
+
+    <section class="home-blog bg-sand">
+        <div class="container">
+            <?php if ($companies) { ?>
+                <div class="row ">
+                    <?php foreach ($companies as $company) { ?>
+                        <div class="col-md-6">
+                            <div class="media blog-media">
+                                <a href=""><img class="img-thumbnail" src="<?php echo base_url('assets/images/' . $company['logo']); ?>" alt="Generic" style="width:225px"></a>
+                                <div class="circle">
+                                    <h5 class="day">14</h5>
+                                    <span class="month">sep</span>
+                                </div>
+                                <div class="media-body">
+                                    <a href="">
+                                        <h5 class="mt-0"><?= $company['nomEntreprise'] ?></h5>
+                                    </a>
+                                    <?= substr($company['presentation'], 0, 70) . ' . . .' ?>
+                                    <a href="#" data-toggle="modal" data-target="#show_ent_modal" onclick="show_ent(<?php echo $company['idEntreprise']; ?>)" class="post-link">Lire la suite</a>
+                                    <ul>
+                                        <li><?= $company['siteWeb'] ?></li>
+                                        <li class="text-right"><a href="blog-post-left-sidebar.html"><i class="fa fa-map-marker"></i> <?= $company['adresse'] ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+        </div>
+    <?php } else { ?>
+        <div class="m-4 text-center text-secondary">
+            <h3>Nous n'avons pas trouvé 😇</h3>
+            <p>Veuillez continuer à Chercher</p>
+        </div>
+    <?php } ?>
+    <?= $pager->links() ?>
+    </section>
+    <!-- 
     <?php if ($companies) { ?>
         <div class="mt-10 liste">
             <?php foreach ($companies as $company) : ?>
@@ -99,14 +137,13 @@
                 </div>
             <?php endforeach; ?>
         </div>
-        <?= $pager->links() ?>
     <?php } else { ?>
         <div class="m-4 text-center text-secondary">
             <h3>Nous n'avons pas trouvé 😇</h3>
             <p>Veuillez continuer à Chercher</p>
         </div>
 
-    <?php } ?>
+    <?php } ?> -->
 </div>
 
 
@@ -374,3 +411,234 @@
         </div>
     </div>
 </div>
+<style>
+    .home-blog {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    @media (min-width: 992px) {
+        .home-blog {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+    }
+
+    .home-blog .section-title {
+        padding-bottom: 15px;
+    }
+
+    .home-blog .media {
+        margin-top: 50px;
+    }
+
+    @media (min-width: 768px) {
+        .home-blog .media {
+            margin-top: 30px;
+        }
+    }
+
+    .bg-sand {
+        background-color: #f5f5f6;
+    }
+
+    .media.blog-media {
+        margin-top: 30px;
+        position: relative;
+        display: block;
+    }
+
+    @media (min-width: 992px) {
+        .media.blog-media {
+            display: table;
+        }
+    }
+
+    .media.blog-media .circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        white-space: nowrap;
+        position: absolute;
+        padding: 0;
+        top: 20px;
+        left: 20px;
+        text-align: center;
+        box-shadow: none;
+        transform: translateX(0);
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+    .media.blog-media .circle .day {
+        color: #fff;
+        transition: color 0.25s ease;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 1;
+        margin-top: 12px;
+    }
+
+    .media.blog-media .circle .month {
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    .media.blog-media>a {
+        position: relative;
+        display: block;
+    }
+
+    @media (min-width: 992px) {
+        .media.blog-media>a {
+            display: table-cell;
+            vertical-align: top;
+            min-width: 200px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .media.blog-media>a {
+            min-width: 230px;
+        }
+    }
+
+    .media.blog-media>a:before {
+        position: absolute;
+        content: "";
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        opacity: 0;
+        transform: scale(0);
+        transition: transform 0.3s ease, opacity 0.3s;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .media.blog-media>a img {
+        width: 100%;
+    }
+
+    .media.blog-media:hover>a:before {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .media.blog-media:hover .circle {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .media.blog-media:hover .circle .day,
+    .media.blog-media:hover .circle .month {
+        color: #222;
+    }
+
+    .media.blog-media:hover .media-body h5 {
+        color: #0cc652;
+    }
+
+    .media.blog-media:hover .media-body a.post-link {
+        color: #0cc652;
+        text-decoration: underline;
+    }
+
+    .media.blog-media .media-body {
+        border: 1px solid #efeff3;
+        padding: 30px 30px 10px;
+        font-size: 14px;
+        background: #fff;
+        border-top: none;
+    }
+
+    @media (min-width: 992px) {
+        .media.blog-media .media-body {
+            padding: 15px 20px 10px;
+            border-top: 1px solid #efeff3;
+            border-left: none;
+            display: table-cell;
+            vertical-align: top;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .media.blog-media .media-body {
+            padding: 30px 20px 10px;
+        }
+    }
+
+    .media.blog-media .media-body h5 {
+        transition: color 0.3s ease;
+        margin-bottom: 15px;
+    }
+
+    @media (min-width: 992px) {
+        .media.blog-media .media-body h5 {
+            font-size: 15px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .media.blog-media .media-body h5 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+    }
+
+    .media.blog-media .media-body a.post-link {
+        display: block;
+        color: #222;
+        font-size: 11px;
+        padding: 23px 0;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    @media (min-width: 992px) {
+        .media.blog-media .media-body a.post-link {
+            padding: 7px 0;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .media.blog-media .media-body a.post-link {
+            padding: 23px 0;
+        }
+    }
+
+    .media.blog-media .media-body ul {
+        position: relative;
+        padding: 10px 0 0;
+    }
+
+    .media.blog-media .media-body ul li {
+        display: inline-block;
+        width: 49%;
+        position: relative;
+    }
+
+    .media.blog-media .media-body ul li:before {
+        position: absolute;
+        content: "";
+        top: 5px;
+        left: 0;
+        width: 1px;
+        height: 14px;
+        background: #eeeef2;
+    }
+
+    .media.blog-media .media-body ul li:first-child:before {
+        visibility: hidden;
+    }
+
+    .media.blog-media .media-body ul:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #eeeef2;
+    }
+</style>
