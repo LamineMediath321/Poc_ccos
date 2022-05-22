@@ -520,12 +520,12 @@
     function ValidateInput() {
         let input = $('#intitule').val();
         if (input.length == 0) {
-            $('#intitule').attr('style', ' border: 2px solid red;border-radius: 4px;');
+            $('#intitule').attr('style', ' border: 1px solid red;border-radius: 4px;');
             $("#icon").attr('class', '');
             $("#error").text('');
             return false;
         }
-        $('#intitule').attr('style', ' border: 2px solid green;border-radius: 4px;');
+        $('#intitule').attr('style', ' border: 1px solid green;border-radius: 4px;');
         $("#icon").attr('class', 'fa fa-check-circle text-success mt-2');
         $("#error").text('Cela semble bon!');
         $("#error").attr('class', 'col-5 text-success mt-2');
@@ -535,12 +535,12 @@
     function ValiderInputTypeContrat() {
         let input = $('#intituleTC').val();
         if (input.length == 0) {
-            $('#intituleTC').attr('style', ' border: 2px solid red;border-radius: 4px;');
+            $('#intituleTC').attr('style', ' border: 1px solid red;border-radius: 4px;');
             $("#icon").attr('class', '');
             $("#error").text('');
             return false;
         }
-        $('#intituleTC').attr('style', ' border: 2px solid green;border-radius: 4px;');
+        $('#intituleTC').attr('style', ' border: 1px solid green;border-radius: 4px;');
         $("#icon").attr('class', 'fa fa-check-circle text-success mt-2');
         $("#error").text('Cela semble bon!');
         $("#error").attr('class', 'col-5 text-success mt-2');
@@ -550,17 +550,50 @@
     function ValiderInputSecteur() {
         let input = $('#intituleSecteur').val();
         if (input.length == 0) {
-            $('#intituleSecteur').attr('style', ' border: 2px solid red;border-radius: 4px;');
+            $('#intituleSecteur').attr('style', ' border: 1px solid red;border-radius: 4px;');
             $("#icon").attr('class', '');
             $("#error").text('');
             return false;
         }
-        $('#intituleSecteur').attr('style', ' border: 2px solid green;border-radius: 4px;');
+        $('#intituleSecteur').attr('style', ' border: 1px solid green;border-radius: 4px;');
         $("#icon").attr('class', 'fa fa-check-circle text-success mt-2');
         $("#error").text('Cela semble bon!');
         $("#error").attr('class', 'col-5 text-success mt-2');
         return true;
     }
+
+
+    function ValiderInputField() {
+        let input = $('#field_title').val();
+        if (input.length == 0) {
+            $('#field_title').attr('style', ' border: 1px solid red;border-radius: 4px;');
+            $("#icon").attr('class', '');
+            $("#error").text('');
+            return false;
+        }
+        $('#field_title').attr('style', ' border: 1px solid green;border-radius: 4px;');
+        $("#icon").attr('class', 'fa fa-check-circle text-success mt-2');
+        $("#error").text('Cela semble bon!');
+        $("#error").attr('class', 'col-5 text-success mt-2');
+        return true;
+    }
+
+    function ValiderInputProfile() {
+        let input = $('#profile_title').val();
+        if (input.length == 0) {
+            $('#profile_title').attr('style', ' border: 1px solid red;border-radius: 4px;');
+            $("#icon").attr('class', '');
+            $("#error").text('');
+            return false;
+        }
+        $('#profile_title').attr('style', ' border: 1px solid green;border-radius: 4px;');
+        $("#icon").attr('class', 'fa fa-check-circle text-success mt-2');
+        $("#error").text('Cela semble bon!');
+        $("#error").attr('class', 'col-5 text-success mt-2');
+        return true;
+    }
+    
+    
 
     function save_ent() {
         let url;
@@ -726,26 +759,6 @@
         } else if (save_method == 'update') {
             url = "<?php echo base_url('secteur/edit_secteur') ?>";
         }
-
-        /*let data = new FormData($('#formComp')[0]);
-        // ajax adding data to database
-        $.ajax({
-            url: url,
-            type: "POST",
-            data: $('#secteur_form').serialize(),
-            dataType: "JSON",
-            // async: false,
-            success: function(data) {
-                //if success close modal and reload ajax table
-                $('#modal_secteur_activite').modal('hide');
-                location.reload(); // for reload a page
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $("#error").text('Ce champ est obligatoire');
-                $("#error").attr('class', 'col-5 text-danger mt-2');
-                $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
-            }
-        });*/
         let data = new FormData($('#secteur_form')[0]);
         // ajax adding data to database
         $.ajax({
@@ -1528,8 +1541,8 @@
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(data);
                 $("#error").text('Ce champ est obligatoire');
-                $("#error").attr('class', 'text-danger mt-2');
-                $("#icon").attr('class', 'fa fa-check');
+                $("#error").attr('class', 'col-5 text-danger mt-2');
+                $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
 
             }
         });
@@ -1620,8 +1633,8 @@
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 $("#error").text('Ce champ est obligatoire');
-                $("#error").attr('class', 'text-danger mt-2');
-                $("#icon").attr('class', 'fa fa-check');
+                $("#error").attr('class', 'col-5 text-danger mt-2');
+                $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
             }
         });
     }
