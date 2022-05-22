@@ -21,6 +21,7 @@ class Entreprise extends BaseController
 	 */
 	public function index()
 	{
+
 		$data = [];
 
 		$data['donnees'] 	=	$this->getCitiesFormationsNCompanies();
@@ -84,15 +85,14 @@ class Entreprise extends BaseController
 
 	public function add_ent()
 	{
-
 		$data = $this->getCompanyFormData();
 		$data['partenaire'] = $this->request->getVar('partner');
 
 		$secteurs = $this->request->getVar('secteur');
 		if ($this->model->add_ent($data, $secteurs)) {
-			session()->setFlashdata('success', 'Entreprise ajout&eacute;e');
+			echo json_encode($data);
 		} else {
-			session()->setFlashdata('danger', 'Entreprise non ajout&eacute;e');
+			echo json_encode($data);
 		}
 	}
 

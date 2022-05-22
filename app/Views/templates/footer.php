@@ -526,12 +526,14 @@
         $("#icon").attr('class', '');
     }
 
-    function ValidateInput() {
+    function validateInput() {
         let input = $('#intitule').val();
-        if (input.length == 0) {
+        let regexName = /^[\w\s-]{3,20}$/;
+        if ((input.length == 0) || (regexName == false)) {
             $('#intitule').attr('style', ' border: 2px solid red;border-radius: 4px;');
-            $("#icon").attr('class', '');
-            $("#error").text('');
+            $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
+            $("#error").text('Le champ est vide !');
+            $("#error").attr('class', 'col-5 text-danger mt-2');
             return false;
         }
         $('#intitule').attr('style', ' border: 2px solid green;border-radius: 4px;');
@@ -570,7 +572,7 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                alert('Une erreur est survenue');
+                console.log(data);
             }
         });
     }

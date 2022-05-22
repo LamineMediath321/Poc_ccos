@@ -142,7 +142,7 @@ endif;
 
                             <div class="col-12 col-sm-6">
                                 <label for="intitule" style="font-weight:bold;">Intitule</label>
-                                <input type="text" class="form-control" name="intitule" id="intitule" onfocus="hideMessage()" onkeyup="ValidateInput()">
+                                <input type="text" class="form-control" name="intitule" id="intitule" onfocus="hideMessage()" onkeyup="validateInput()">
 
                             </div>
                         </div>

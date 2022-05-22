@@ -125,8 +125,6 @@ class Competence extends BaseController
 
 		$data = array(
 			'intitule' => $this->request->getVar('intitule'),
-
-
 		);
 		$comp = $this->model->get_competence($data['intitule']);
 
