@@ -407,13 +407,8 @@
                 $('[name="idCompetence"]').val(data.idCompetence);
                 $('[name="intitule"]').val(data.intitule);
                 console.log(data);
-
                 console.log($('[name="intitule"]').val());
                 console.log($('[name="idCompetence"]').val());
-
-
-
-
                 $('#add_comp_modal').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Modifier Competence'); // Set title to Bootstrap modal title
             },
@@ -493,9 +488,7 @@
         } else if (save_method == 'update') {
             url = "<?php echo base_url('competence/edit_competence') ?>";
         }
-
         let data = new FormData($('#formComp')[0]);
-
         // ajax adding data to database
         $.ajax({
             url: url,
@@ -510,13 +503,11 @@
                 //if success close modal and reload ajax table
                 $('#add_comp_modal').modal('hide');
                 location.reload(); // for reload a page
-
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 $("#error").text('Ce champ est obligatoire');
                 $("#error").attr('class', 'col-5 text-danger mt-2');
                 $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
-
             }
         });
     }
@@ -541,10 +532,37 @@
         $("#error").text('Cela semble bon!');
         $("#error").attr('class', 'col-5 text-success mt-2');
         return true;
-
     }
 
+    function ValiderInputTypeContrat() {
+        let input = $('#intituleTC').val();
+        if (input.length == 0) {
+            $('#intituleTC').attr('style', ' border: 2px solid red;border-radius: 4px;');
+            $("#icon").attr('class', '');
+            $("#error").text('');
+            return false;
+        }
+        $('#intituleTC').attr('style', ' border: 2px solid green;border-radius: 4px;');
+        $("#icon").attr('class', 'fa fa-check-circle text-success mt-2');
+        $("#error").text('Cela semble bon!');
+        $("#error").attr('class', 'col-5 text-success mt-2');
+        return true;
+    }
 
+    function ValiderInputSecteur() {
+        let input = $('#intituleSecteur').val();
+        if (input.length == 0) {
+            $('#intituleSecteur').attr('style', ' border: 2px solid red;border-radius: 4px;');
+            $("#icon").attr('class', '');
+            $("#error").text('');
+            return false;
+        }
+        $('#intituleSecteur').attr('style', ' border: 2px solid green;border-radius: 4px;');
+        $("#icon").attr('class', 'fa fa-check-circle text-success mt-2');
+        $("#error").text('Cela semble bon!');
+        $("#error").attr('class', 'col-5 text-success mt-2');
+        return true;
+    }
 
     function save_ent() {
         let url;
@@ -699,7 +717,6 @@
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR);
-                alert('Erreur Ajax');
             }
         });
     }
@@ -712,6 +729,7 @@
             url = "<?php echo base_url('secteur/edit_secteur') ?>";
         }
 
+        /*let data = new FormData($('#formComp')[0]);
         // ajax adding data to database
         $.ajax({
             url: url,
@@ -725,10 +743,34 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log(data);
-                alert('Une erreur est survenue');
+                $("#error").text('Ce champ est obligatoire');
+                $("#error").attr('class', 'col-5 text-danger mt-2');
+                $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
+            }
+        });*/
+        let data = new FormData($('#secteur_form')[0]);
+        // ajax adding data to database
+        $.ajax({
+            url: url,
+            type: "POST",
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: data,
+            dataType: "text",
+            // async: false,
+            success: function(data) {
+                //if success close modal and reload ajax table
+                $('#modal_secteur_activite').modal('hide');
+                location.reload(); // for reload a page
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#error").text('Ce champ est obligatoire');
+                $("#error").attr('class', 'col-5 text-danger mt-2');
+                $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
             }
         });
+
     }
 
     function delete_secteur(id) {
@@ -1121,8 +1163,9 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log(jqXHR);
-                alert('Une erreur est survenue');
+                // console.log(jqXHR);
+                $("#error").text('Ce champ est obligatoire');
+                $("#error").attr('class', 'col-5 text-danger mt-2 text-center');
             }
         });
     }
@@ -1375,24 +1418,29 @@
         } else if (save_method == 'update') {
             url = "<?php echo base_url('typeContrat/edit_contract_type') ?>";
         }
-
         //var data = new FormData($('#formtc')[0]);
+        let data = new FormData($('#formtc')[0]);
 
         // ajax adding data to database
         $.ajax({
             url: url,
             type: "POST",
-            data: $('#formtc').serialize(),
-            dataType: "JSON",
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: data,
+            dataType: "text",
             // async: false,
             success: function(data) {
                 //if success close modal and reload ajax table
                 $('#modal_form_tc').modal('hide');
                 location.reload(); // for reload a page
+
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log(jqXHR);
-                alert('Une erreur est survenue');
+                $("#error").text('Ce champ est obligatoire');
+                $("#error").attr('class', 'col-5 text-danger mt-2');
+                $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
             }
         });
     }

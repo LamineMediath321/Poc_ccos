@@ -6,7 +6,7 @@ class DomaineModel extends Model{
     protected $table = 'domaine';
     protected $primary_key = 'idDomaine';
     protected $returnType = 'array';
-    protected $allowedFields = ['intitule'];
+    protected $allowedFields = ['intitule','icon'];
     protected $db;
 
     function __construct()

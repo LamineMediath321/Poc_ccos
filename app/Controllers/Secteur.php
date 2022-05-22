@@ -31,13 +31,19 @@ class Secteur extends BaseController
             'intitule' => $this->request->getVar('intituleSecteur'),
             
         );
-        
-        if ($this->model->insert($data)){
-            echo json_encode(array("status" => TRUE, "message" => "Secteur ajouté"));
-        }
-        else {
-            echo json_encode(array("status" => false, "message" => "Echec"));
-        }
+        $comp = $this->model->get_typeSecteur($data['intitule']);
+        if ($this->request->getMethod() == 'post') {
+			$rules = [
+				'intituleSecteur' => 'required'
+			];
+			if ($this->validate($rules)) {
+				if (empty($comp))
+					$this->model->add_secteur($data);
+			} else {
+				$data['validation'] = $this->validator;
+				echo_json($data);
+			}
+		}
     }
 
     public function edit_secteur()
@@ -45,14 +51,20 @@ class Secteur extends BaseController
         helper(['form','url']);
 
         $data = array(
-                'intitule' => $this->request->getVar('intituleSecteur')
-        );
-        if ($this->model->edit_secteur(array('idSecteur' => $this->request->getVar('idSecteur')), $data)){
-                echo json_encode(array("status" => TRUE, "message" => "Secteur modifié"));
-        }
-        else {
-            echo json_encode(array("status" => false, "message" => "Failed to update"));
-        } 
+			'intitule' => $this->request->getVar('intituleSecteur'),
+		);
+
+		if ($this->request->getMethod() == 'post') {
+			$rules = [
+				'intituleSecteur' => 'required'
+			];
+			if ($this->validate($rules)) {
+				$this->model->edit_secteur(array('idSecteur' => $this->request->getVar('idSecteur')), $data);
+			} else {
+				$data['validation'] = $this->validator;
+				echo_json($data);
+			}
+		}
     }
 
     public function delete_secteur($id) 

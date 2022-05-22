@@ -31,6 +31,11 @@ class TypeContratModel extends Model
                     ->get()->getRow();
     }
     
+    public function get_typeContrat($attribute) {
+        return $this->where('intitule', $attribute)
+            ->get()->getRow();
+    }
+
     public function update_tc($id,$tc)
     {
         $this->db->table('typecontrat')->update($tc, $id);

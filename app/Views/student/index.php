@@ -12,7 +12,7 @@
     endif;
         ?>
         <h2></h2>
-        </div>
+        </div> 
 </section>
 
 <div class="clearfix"></div>
@@ -81,16 +81,17 @@
         <div class="col-md-12 col-sm-12">
             <div class="full-card profile-tab-mt">
                 <div class="deatil-tab-employ tool-tab">
-                    <ul class="nav simple nav-tabs" id="simple-design-tab">
-                        <li class="active"><a href="#offers">Offres</a></li>
-                        <li><a href="#candidacies">Mes candidatures</a></li>
-                        <li><a href="#activities">Activit&eacute;s</a></li>
+                    <ul class="nav nav-tabs" id="simple-design-tab">
+                        <li class="nav-item"><a class="nav-link active" href="#offers">Offres</a></li>
+                        <li class="nav-item" ><a class="nav-link" href="#candidacies">Mes candidatures</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#activities">Activit&eacute;s</a></li>
                         <!--li><a href="#messages">Messages <span class="info-bar">6</span></a></li>
                         <li><a href="#settings">Settings</a></li -->
                     </ul>
                     <!-- Start All Sec -->
                     <div class="tab-content">
-
+                        
+                             
                         <!-- Start Job List -->
                         <div id="offers" class="tab-pane fade">
                             <div class="row">
@@ -138,6 +139,7 @@
                                     </div>
                                 <?php } ?>
                             </div>
+                            
                         </div>
                         <!-- End Offer List -->
 
@@ -217,7 +219,7 @@
                         </div>
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
-                                <label for="fstname">Prenom</label>
+                                <label for="fstname">Prénom</label>
                                 <input type="text" class="form-control" name="fstname" id="fstname" value="" readonly>
                             </div>
                         </div>
@@ -229,7 +231,7 @@
                         </div>
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
-                                <label class="bmd-label-floating" for="phone">Numero de telephone</label>
+                                <label class="bmd-label-floating" for="phone">Numéro de téléphone</label>
                                 <input type="tel" class="form-control" name="phone" id="phone" value="">
                             </div>
                         </div>
@@ -274,17 +276,17 @@
                         </div>
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
-                                <label class="bmd-label-floating" for="natnalty">Nationnalite</label>
+                                <label class="bmd-label-floating" for="natnalty">Nationalité</label>
                                 <input type="text" class="form-control" name="natnalty" id="natnalty" value="">
                             </div>
                         </div>
-                        <div class="col-xs-9 col-sm-12">
+                        <!-- <div class="col-xs-9 col-sm-12">
                             <div class="form-group ">
                                 <label class="bmd-label-floating" for="description">Description</label>
                                 <textarea class="form-control textarea" name="description" id="description" minlength="10" maxlength="1300" rows="4" placeholder=""> </textarea>
 
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
                                 <label for="pict"><img src="" width="130" height="130" id="pict" alt=""></label>
@@ -312,3 +314,10 @@
     </div>
 </div>
 </div>
+<style>
+    .form-group{
+        width:85%;
+        padding-left:3.5em;
+    }
+    
+</style>

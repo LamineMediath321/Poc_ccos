@@ -148,13 +148,14 @@ endif;
                         </div>
 
                         <div class="row">
-                            <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
+                            <p id="error" style=" font-style:italic;"></p>
                         </div>
                         <div class="modal-footer">
                             <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                             <button type="submit" id="btn_save" onclick="save_comp()" class="btn btn-primary">Valider</button>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>

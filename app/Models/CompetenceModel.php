@@ -25,7 +25,14 @@ class CompetenceModel extends Model
 
     public function add_skills($data)
     {
-        $this->db->table('competence_cv')->insertBatch($data);
+        $this->db->table('competence_cv')->insert($data);
+    }
+
+    public function get_competence_cv($data)
+    {
+        return $this->db->table('competence_cv')
+            ->where('idCompetence', $data['idCompetence'])
+            ->where('idCV', $data['idCv']);
     }
 
     public function getResumeSkills($resume)

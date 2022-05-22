@@ -26,9 +26,19 @@ class SecteurModel extends Model{
                     ->get()->getRow();
     }
 
+    public function get_typeSecteur($attribute) {
+        return $this->where('intitule', $attribute)
+            ->get()->getRow();
+    }
+
     public function edit_secteur($id, $data)
     {
         $this->db->table($this->table)->update($data, $id);
+    }
+
+    public function add_secteur($data)
+    {
+        $this->db->table('secteur')->insert($data);
     }
 
     public function delete_secteur($id)

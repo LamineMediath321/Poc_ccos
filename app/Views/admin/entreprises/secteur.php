@@ -84,9 +84,14 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label for="intituleSecteur">Intitule</label>
-                                <input type="text" class="form-control" name="intituleSecteur" id="intituleSecteur" value="">
+                                <input type="text" class="form-control" name="intituleSecteur" id="intituleSecteur" value="" onfocus="hideMessage()" onkeyup="ValiderInputSecteur()">
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        
+                            <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
