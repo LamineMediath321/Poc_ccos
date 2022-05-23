@@ -48,6 +48,10 @@
     </div>
 </div>
 <div class="clearfix"></div>
+
+
+
+
 <section>
     <div class="container">
         <div class="row">
@@ -198,70 +202,56 @@
     </div>
 </section> -->
 
-<header>
-    <div class="container text-center">
 
-        <!-- Logo -->
-        <div class="logo">
-            <p><?= $offersCount ?> Offres</p>
-            <h1><b>Nouvelles <span>Offres</span></b></h1>
-        </div>
-
-        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h1>
-
-    </div>
-</header>
-
-<div class="container">
-    <div class="row">
-        <?php if ($offers_) {
-            foreach ($offers_ as $offer) {
-        ?>
-                <div class="col-md-4">
-                    <h4 class="text-center"><strong><?= $offer['nomEntreprise'] ?></strong></h4>
-                    <hr>
-                    <div class="profile-card-4 text-center"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-4.jpg" class="img img-responsive">
-                        <div class="profile-content">
-                            <div class="profile-name">
-                                <a href="<?php echo base_url(); ?>/offre/<?= $offer['idOpportunite'] ?>">
-                                    <?= $offer['title'] ?>
-                                </a>
-                                <div class="brows-job-type"><span class="freelanc"><?= $offer['contractType'] ?></span></div>
-                            </div>
-                            <div class="profile-description">
-                                <p><span><?= $offer['nomEntreprise'] ?></span></p>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-4 h-auto">
-                                    <div class="profile-overview">
-                                        <h4><strong>LIEU</strong></h4>
-                                        <h5>
-                                            <i class="fa fa-map-marker h"></i><?= $offer['nom'] ?>
-                                        </h5>
-                                    </div>
+<div class="row">
+    <?php if ($offers_) {
+        foreach ($offers_ as $offer) {
+    ?>
+            <div class="col-md-4">
+                <h4 class="text-center"><strong><?= $offer['nomEntreprise'] ?></strong></h4>
+                <hr>
+                <div class="profile-card-4 text-center"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-4.jpg" class="img img-responsive">
+                    <div class="profile-content">
+                        <div class="profile-name">
+                            <a href="<?php echo base_url(); ?>/offre/<?= $offer['idOpportunite'] ?>">
+                                <?= $offer['title'] ?>
+                            </a>
+                            <div class="brows-job-type"><span class="freelanc"><?= $offer['contractType'] ?></span></div>
+                        </div>
+                        <div class="profile-description">
+                            <p><span><?= $offer['nomEntreprise'] ?></span></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 h-auto">
+                                <div class="profile-overview">
+                                    <h4><strong>LIEU</strong></h4>
+                                    <h5>
+                                        <i class="fa fa-map-marker h"></i><?= $offer['nom'] ?>
+                                    </h5>
                                 </div>
-                                <div class="col-xs-4">
+                            </div>
+                            <div class="col-xs-4">
 
-                                </div>
-                                <div class="col-xs-4">
-                                    <div class="profile-overview">
-                                        <h4><strong>LIEU</strong></h4>
-                                        <p><span class="brows-job-sallery"><i class="fa fa-hourglass-half"></i>
-                                                <?php
-                                                setlocale(LC_TIME, 'fr_FR.utf8', 'french', 'French_France.1252', 'fr_FR.ISO8859-1', 'fra');
-                                                echo strftime("%d %b %G", strtotime($offer['dateCloture']));
-                                                ?>
-                                            </span>
-                                        </p>
-                                    </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="profile-overview">
+                                    <h4><strong>LIEU</strong></h4>
+                                    <p><span class="brows-job-sallery"><i class="fa fa-hourglass-half"></i>
+                                            <?php
+                                            setlocale(LC_TIME, 'fr_FR.utf8', 'french', 'French_France.1252', 'fr_FR.ISO8859-1', 'fra');
+                                            echo strftime("%d %b %G", strtotime($offer['dateCloture']));
+                                            ?>
+                                        </span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        <?php }
-        } ?>
-    </div>
+            </div>
+    <?php }
+    } ?>
+</div>
 
 </div>
 

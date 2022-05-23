@@ -347,7 +347,7 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label class="bmd-label-floating" for="school">Etablissement</label>
-                                <input type="text" list="schools" class="form-control" name="school" id="school" onchange="hideMessage()" >
+                                <input type="text" list="schools" class="form-control" name="school" id="school" onchange="hideMessage()">
                                 <datalist id="schools">
                                     <?php
                                     foreach ($schools as $school) :
@@ -528,7 +528,6 @@
                                 <label for="language">Langue</label>
                                 <select name="language" class="select2 form-control custom-select" id="language" onchange="hideMessage()">
                                     <option>Sélectionnez la langue...</option>
-
                                     <?Php foreach ($languages as $language) :  ?>
                                         <option value="<?= $language['idLangue']  ?>"><?= $language['intitule'] ?></option>
                                     <?php endforeach;  ?>

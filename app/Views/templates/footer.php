@@ -505,9 +505,11 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                $("#error").text('Ce champ est obligatoire');
+                $("#error").text('Une erreur est survenue lors de la saisie');
                 $("#error").attr('class', 'col-5 text-danger mt-2');
                 $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
+                console.log(jqXHR)
+                console.log(errorThrown)
             }
         });
     }
@@ -583,7 +585,7 @@
     }
 
     function clean() {
-       
+
         $('#field_title').attr('style', ' border: no-border;');
         $("#icon").attr('class', '');
         $("#error").text('');
@@ -1599,7 +1601,7 @@
         save_method = 'add';
         $('#profile_form')[0].reset(); // reset form on modals
         $('#profile_modal').modal('show'); // show bootstrap modal
-        
+
     }
 
     function edit_profile(id) {
