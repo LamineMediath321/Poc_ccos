@@ -44,26 +44,44 @@ class Formation extends BaseController
 		);
 
 		$school = (new EtablissementModel())->getSchool($this->request->getVar('school'));
+		if ($this->request->getMethod() == 'post') {
+			$rules = [
+				'school' => 'required',
+				'studyLevel' => 'required',
+				'field' => 'required',
 
-		if (!$school)
-		{
-			$new_school['nom'] = $this->request->getVar('school');
-			$school = (new EtablissementModel())->addSchool($new_school);
-			$data['idEtablissement'] = $school;
+			];
+			if ($this->validate($rules)) {
+				if (!$school)
+				{
+					$new_school['nom'] = $this->request->getVar('school');
+					$school = (new EtablissementModel())->addSchool($new_school);
+					$data['idEtablissement'] = $school;
+				}
+				else{
+					$data['idEtablissement'] = $school['idEtablissement'];
+				}
+
+				$studyLevel = $this->request->getVar('studyLevel');
+				$field = $this->request->getVar('field');
+				$resume = (new CvModel())->user_cv(session('id'));
+				$this->model->add_formation($data, $field, $resume, $studyLevel);
+			} 
+			else {
+				$data['validation'] = $this->validator;
+				echo_json($data);
+			}
 		}
-		else
-			$data['idEtablissement'] = $school['idEtablissement'];
 
-		$studyLevel = $this->request->getVar('studyLevel');
-		$field = $this->request->getVar('field');
-		$resume = (new CvModel())->user_cv(session('id'));
+
 		
-		if ($this->model->add_formation($data, $field, $resume, $studyLevel)){
-			echo json_encode(array("status" => TRUE, "message" => "Formation ajoutée"));
-		}
-		else {
-			echo json_encode(array("status" => false, "message" => "Failed"));
-		}
+		
+		// if ($this->model->add_formation($data, $field, $resume, $studyLevel)){
+		// 	echo json_encode(array("status" => TRUE, "message" => "Formation ajoutée"));
+		// }
+		// else {
+		// 	echo json_encode(array("status" => false, "message" => "Failed"));
+		// }
     }
 
 	public function edit_formation() 

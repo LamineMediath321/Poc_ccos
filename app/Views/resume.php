@@ -347,7 +347,7 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label class="bmd-label-floating" for="school">Etablissement</label>
-                                <input type="text" list="schools" class="form-control" name="school" id="school">
+                                <input type="text" list="schools" class="form-control" name="school" id="school" onchange="hideMessage()" >
                                 <datalist id="schools">
                                     <?php
                                     foreach ($schools as $school) :
@@ -363,7 +363,7 @@
                             <div class="form-group">
                                 <label for="studyLevel">Niveau d'étude</label>
                                 <!--input type="text" class="form-control" name="diploma" id="diploma" value="" -->
-                                <select name="studyLevel" class="select2 form-control custom-select">
+                                <select name="studyLevel" class="select2 form-control custom-select" onchange="hideMessage()">
                                     <option>Choisissez...</option>
                                     <?Php foreach ($studyLevels as $studyLevel) :  ?>
                                         <option value="<?= $studyLevel['idNiveauEtude']  ?>"><?= $studyLevel['intitule']  ?></option>
@@ -374,7 +374,7 @@
                         <div class="col-12 col-sm-6 field">
                             <div class="form-group">
                                 <label for="field">Domaine</label>
-                                <select name="field" class="select2 form-control custom-select">
+                                <select name="field" class="select2 form-control custom-select" onchange="hideMessage()">
                                     <option>Choisissez...</option>
                                     <?Php foreach ($fields as $field) :  ?>
                                         <option value="<?= $field['idDomaine']  ?>"><?= $field['intitule']  ?></option>
@@ -397,11 +397,15 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label class="bmd-label-floating" for="description">Description</label>
-                                <textarea class="form-control" name="description" id="description" minlength="10" maxlength="1300" rows="4" placeholder=""> </textarea>
+                                <textarea class="form-control" name="description" id="description" minlength="0" maxlength="1300" rows="4" placeholder=""> </textarea>
 
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="row">
+                    <p id="error_2" style=" font-style:italic;"></p>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="idForm">

@@ -1074,22 +1074,26 @@
         } else {
             url = "<?php echo base_url('formation/edit_formation') ?>";
         }
+        let data = new FormData($('#formationForm')[0]);
 
         // ajax adding data to database
         $.ajax({
             url: url,
             type: "POST",
-            data: $('#formationForm').serialize(),
-            dataType: "JSON",
-            // async: false,
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: data,
+            dataType: "text",
             success: function(data) {
                 //if success close modal and reload ajax table
                 $('#add_formation').modal('hide');
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus);
-                alert(errorThrown);
+                console.log(jqXHR);
+                $("#error_2").text("Les champs Etablissement,Domaine et Niveau d'étude sont obligatoires.🤨 Veuillez-les remplir.");
+                $("#error_2").attr('class', 'col-5 text-danger mt-2 text-center');
             }
         });
     }
