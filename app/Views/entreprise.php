@@ -67,7 +67,7 @@
                     <?php foreach ($companies as $company) { ?>
                         <div class="col-md-6">
                             <div class="media blog-media">
-                                <a href=""><img class="img-thumbnail" src="<?php echo base_url('assets/images/' . $company['logo']); ?>" alt="Generic" style="width:225px"></a>
+                                <a href=""><img class="img-thumbnail" src="<?php echo base_url('assets/images/' . $company['logo']); ?>" alt="Generic" style="width:350px;height:250px"></a>
                                 <div class="circle">
                                     <h5 class="day">14</h5>
                                     <span class="month">sep</span>
