@@ -30,12 +30,7 @@
                 <div class="navbar-header">
                     <h3 class="logo"> <a href="<?= base_url(); ?>"> Plateforme <span> Opportunit&eacute;s</span> </a></h3>
                 </div>
-                <!--div class="navbar-header">
-                <a class="navbar-brand logo" href="index-2.html">
-                <h3> Plateforme <span> Opportunit&eacute;s</span>  
-                 </h3>
-                </a>
-                </div-->
+
                 <div class="collapse navbar-collapse" id="navbar-menu">
 
                     <ul class="nav navbar-nav navbar-right text-center" data-in="fadeInDown" data-out="fadeOutUp">

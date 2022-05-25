@@ -69,77 +69,231 @@
 
 <?php else : ?>
 
-    <footer class="footer">
-        <div class="row lg-menu">
-            <div class="container">
-                <div class="col-md-5 col-sm-5">
-                    <h3 class="logo"> Plateforme <span> Opportunit&eacute;s</span> </h3>
-                </div>
-            </div>
-        </div>
-        <div class="row no-padding">
-            <div class="container">
-                <div class="col-md-3 col-sm-12">
-                    <div class="footer-widget">
-                        <h3 class="widgettitle widget-title">A propos</h3>
-
-                        <div class="textwidget">
-                            <p>
-                                La plateforme d'accompagnement des &eacute;tudiants de
-                                l'Universit&eacute; Gaston Berger dans leur insertion.
-                            </p>
-
-                            <p>UFR LSH<br>Sanar, Saint-Louis</p>
-
-                            <p><strong>Email:</strong> d2ipsc@ugb.ed.sn</p>
-
-                            <p><strong>Telephone:</strong> <a href="tel:+221770000000">77-000-00-00</a></p>
-
-                        </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <section class="section gray-bg" id="contactus">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title">
+                        <h2>Plateforme d'opportunite</h2>
+                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-4">
-                    <div class="footer-widget">
-                        <h3 class="widgettitle widget-title">Naviguer</h3>
-
-                        <div class="textwidget">
-                            <div class="textwidget">
-                                <ul class="footer-navigation">
-                                    <li><a href="/" title="">Accueil</a></li>
-                                    <li><a href="/entreprises" title="">Entreprises</a></li>
-                                    <li><a href="#" title="">Devenir partenaire</a></li>
-                                </ul>
+            </div>
+            <div class="row flex-row-reverse">
+                <div class="col-md-5">
+                    <div class="contact-name">
+                        <h5>Mail <i class="fa fa-envelope"></i> </h5>
+                        <p>d2ips@ugb.edu.sn</p>
+                    </div>
+                    <div class="contact-name">
+                        <h5>Visiter nous à l'adresse <i class="fa fa-map-marker"></i> </h5>
+                        <p>UFR LSH, <br>FL 33157 Saint-Louis</p>
+                    </div>
+                    <div class="contact-name">
+                        <h5>Téléphone <i class="fa fa-phone"></i> </h5>
+                        <p>+01 123 654 8096</p>
+                    </div>
+                    <div class="social-share nav">
+                        <a class="dribbble" href="#">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a class="behance" href="#">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a class="linkedin" href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="contact-form">
+                        <form action="/" method="post" class="contactform contact_form" id="contact_form">
+                            <div class="returnmessage valid-feedback p-15px-b" data-success="Your message has been received, We will contact you soon."></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input id="email" type="text" placeholder="Adresse email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input id="subject" type="text" placeholder="Objet" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea id="message" placeholder="Message" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="send">
+                                        <a id="send_message" class="px-btn theme" href="#"><span>Contacter nous</span> <i class="arrow"></i></a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-4">
-                    <div class="footer-widget">
-                        <h3 class="widgettitle widget-title">Opportunit&eacute;</h3>
 
-                        <div class="textwidget">
-                            <ul class="footer-navigation">
-                                <li><a href="/offres" title="">Offres</a></li>
-                                <li><a href="#" title="">Publier une offre</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-4">
-                    <div class="footer-widget">
-                        <h3 class="widgettitle widget-title">Contactez nous</h3>
-
-                        <div class="textwidget">
-                            <form class="footer-form">
-                                <input type="text" class="form-control" placeholder="Email"><textarea class="form-control" placeholder="Message"></textarea>
-                                <button type="submit" class="btn btn-primary">Envoyer</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </footer>
+    </section>
+    <style>
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .gray-bg {
+            background-color: #f5f5f5;
+        }
+
+        /* Contact Us
+---------------------*/
+        .contact-name {
+            margin-bottom: 30px;
+        }
+
+        .contact-name h5 {
+            font-size: 22px;
+            color: #3b5998;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-name p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .social-share a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .social-share .dribbble {
+            box-shadow: 0 8px 30px -4px rgba(234, 76, 137, 0.5);
+            background-color: #ea4c89;
+        }
+
+        .social-share .behance {
+            box-shadow: 0 8px 30px -4px rgba(0, 103, 255, 0.5);
+            background-color: #0067ff;
+        }
+
+        .social-share .linkedin {
+            box-shadow: 0 8px 30px -4px rgba(1, 119, 172, 0.5);
+            background-color: #0177ac;
+        }
+
+        .contact-form .form-control {
+            border: none;
+            border-bottom: 1px solid #20247b;
+            background: transparent;
+            border-radius: 0;
+            padding-left: 0;
+            box-shadow: none !important;
+        }
+
+        .contact-form .form-control:focus {
+            border-bottom: 1px solid #fc5356;
+        }
+
+        .contact-form .form-control.invalid {
+            border-bottom: 1px solid #ff0000;
+        }
+
+        .contact-form .send {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 767px) {
+            .contact-form .send {
+                margin-bottom: 20px;
+            }
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+            color: #3b5998;
+            font-size: 45px;
+            margin: 0 0 15px;
+            border-left: 5px solid #fc5356;
+            padding-left: 15px;
+        }
+
+        .section-title {
+            padding-bottom: 45px;
+        }
+
+        .contact-form .send {
+            margin-top: 20px;
+        }
+
+        .px-btn {
+            padding: 0 50px 0 20px;
+            line-height: 60px;
+            position: relative;
+            display: inline-block;
+            color: #20247b;
+            background: none;
+            border: none;
+        }
+
+        .px-btn:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 30px;
+            background: transparent;
+            border: 1px solid rgba(252, 83, 86, 0.6);
+            border-right: 1px solid transparent;
+            -moz-transition: ease all 0.35s;
+            -o-transition: ease all 0.35s;
+            -webkit-transition: ease all 0.35s;
+            transition: ease all 0.35s;
+            width: 60px;
+            height: 60px;
+        }
+
+        .px-btn .arrow {
+            width: 13px;
+            height: 2px;
+            background: currentColor;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 25px;
+        }
+
+        .px-btn .arrow:after {
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid currentColor;
+            border-top: 2px solid currentColor;
+            content: "";
+            position: absolute;
+            top: -3px;
+            right: 0;
+            display: inline-block;
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    </style>
+
 <?php endif; ?>
 
 <script type="text/javascript">
