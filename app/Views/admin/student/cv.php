@@ -24,16 +24,10 @@
                         <span class="designation text-muted">
                             <?= $resume && $persinfo['profils'] ? $persinfo['profils'] : '' ?>
                         </span>
-                        <div class="d-flex align-items-center justify-content-center mb-3">
-                            <i class="fas fa-star text-info"></i>
-                            <i class="fas fa-star text-info"></i>
-                            <i class="fas fa-star text-info"></i>
-                            <i class="fas fa-star text-info"></i>
-                            <i class="fas fa-star text-info"></i>
-                        </div>
+
                     </div>
                     <div class="personal-info">
-                        <h3>Information personnelles</h3>
+                        <h3 class="mt-3">Information personnelles</h3>
                         <ul class="personal-list">
                             <!-- <li><i class="fas fa-briefcase "></i><span>Web Designer</span></li> -->
                             <li><i class="fas fa-map-marker-alt "></i><span><?= $resume ? $persinfo['adresse'] : ' - - - ' ?></span></li>
@@ -68,7 +62,7 @@
         </div>
         <div class="col-lg-9">
             <div class="card right-profile-card">
-                <div class="card-header alert-dark">
+                <div class="card-header" style="background-color: #272c33;">
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-selected="true">Experience Professionnelle</a>

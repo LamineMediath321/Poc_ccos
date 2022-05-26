@@ -69,76 +69,77 @@
 
 <?php else : ?>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-    <section class="section gray-bg" id="contactus">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title">
-                        <h2>Plateforme d'opportunite</h2>
-                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
-                    </div>
+    <footer class="footer">
+        <div class="row lg-menu">
+            <div class="container">
+                <div class="col-md-5 col-sm-5">
+                    <h3 class="logo"> Plateforme <span> Opportunit&eacute;s</span> </h3>
                 </div>
-            </div>
-            <div class="row flex-row-reverse">
-                <div class="col-md-5">
-                    <div class="contact-name">
-                        <h5>Mail <i class="fa fa-envelope"></i> </h5>
-                        <p>d2ips@ugb.edu.sn</p>
-                    </div>
-                    <div class="contact-name">
-                        <h5>Visiter nous à l'adresse <i class="fa fa-map-marker"></i> </h5>
-                        <p>UFR LSH, <br>FL 33157 Saint-Louis</p>
-                    </div>
-                    <div class="contact-name">
-                        <h5>Téléphone <i class="fa fa-phone"></i> </h5>
-                        <p>+01 123 654 8096</p>
-                    </div>
-                    <div class="social-share nav">
-                        <a class="dribbble" href="#">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                        <a class="behance" href="#">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a class="linkedin" href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="contact-form">
-                        <form action="/" method="post" class="contactform contact_form" id="contact_form">
-                            <div class="returnmessage valid-feedback p-15px-b" data-success="Your message has been received, We will contact you soon."></div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input id="email" type="text" placeholder="Adresse email" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input id="subject" type="text" placeholder="Objet" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea id="message" placeholder="Message" class="form-control" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="send">
-                                        <a id="send_message" class="px-btn theme" href="#"><span>Contacter nous</span> <i class="arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
+        <div class="row no-padding">
+            <div class="container">
+                <div class="col-md-3 col-sm-12">
+                    <div class="footer-widget">
+                        <h3 class="widgettitle widget-title">A propos</h3>
+
+                        <div class="textwidget">
+                            <p>
+                                La plateforme d'accompagnement des &eacute;tudiants de
+                                l'Universit&eacute; Gaston Berger dans leur insertion.
+                            </p>
+
+                            <p>UFR LSH<br>Sanar, Saint-Louis</p>
+
+                            <p><strong>Email:</strong> d2ipsc@ugb.ed.sn</p>
+
+                            <p><strong>Telephone:</strong> <a href="tel:+221770000000">77-000-00-00</a></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <div class="footer-widget">
+                        <h3 class="widgettitle widget-title">Naviguer</h3>
+
+                        <div class="textwidget">
+                            <div class="textwidget">
+                                <ul class="footer-navigation">
+                                    <li><a href="/" title="">Accueil</a></li>
+                                    <li><a href="/entreprises" title="">Entreprises</a></li>
+                                    <li><a href="#" title="">Devenir partenaire</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <div class="footer-widget">
+                        <h3 class="widgettitle widget-title">Opportunit&eacute;</h3>
+
+                        <div class="textwidget">
+                            <ul class="footer-navigation">
+                                <li><a href="/offres" title="">Offres</a></li>
+                                <li><a href="#" title="">Publier une offre</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <div class="footer-widget">
+                        <h3 class="widgettitle widget-title">Contactez nous</h3>
+
+                        <div class="textwidget">
+                            <form class="footer-form">
+                                <input type="text" class="form-control" placeholder="Email"><textarea class="form-control" placeholder="Message"></textarea>
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <style>
         .section {
             padding: 100px 0;

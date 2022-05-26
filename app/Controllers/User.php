@@ -87,7 +87,7 @@ class User extends BaseController
 			}
 		}
 
-		$this->charger('login', $data);
+		echo view('login', $data);
 	}
 
 	/**
@@ -176,7 +176,7 @@ class User extends BaseController
 		$data['sections']	= 	$this->model->getSections();
 		$data['roles']		=	$this->model->getRoles();
 
-		$this->charger('register', $data);
+		echo view('register', $data);
 	}
 
 	/**
@@ -258,17 +258,14 @@ class User extends BaseController
 			return redirect()->to(base_url('/'));
 
 		$this->adminPage('admin/student/index', $data);
-
-
 	}
 
-	public function getEtudiantCandidatures($id){
+	public function getEtudiantCandidatures($id)
+	{
 
 		$data = [];
 		$data['mycandidacies'] 	=	(new OffreModel())->getStudentCandidacies($id);
 		$this->charger('admin/student/candidatures', $data);
-
-
 	}
 
 
@@ -286,10 +283,10 @@ class User extends BaseController
 		$this->adminPage('admin/users/index', $data);
 	}
 
-	public function get_email($id){
+	public function get_email($id)
+	{
 		$data = (new UserModel())->getEmail($id);
 		echo json_encode($data);
-
 	}
 
 	public function send_mail()
@@ -302,42 +299,34 @@ class User extends BaseController
 			'email' => $this->request->getVar('email'),
 		);
 
-		if($this->request->getMethod() == 'post'){
+		if ($this->request->getMethod() == 'post') {
 			$rules = [
 				'objet' => 'required',
 				'contenu' => 'required',
 			];
-			if($this->validate($rules)) {
+			if ($this->validate($rules)) {
 				$message = $data['contenu'];
 				$email = \Config\Services::email();
 				$email->setFrom('aidara.ndeye-khady@ugb.edu.sn', 'Ndeye khady Aidara');
 				$email->setTo($data['email']);
 				$email->setSubject($data['objet']);
-				$email->setMessage($message);//your message here
+				$email->setMessage($message); //your message here
 				$data['email'] = $email;
 
 
-		
-			// $email->setCC('another@emailHere');//CC
-			// $email->setBCC('thirdEmail@emialHere');// and BCC
-			// $filename = '/img/yourPhoto.jpg'; //you can use the App patch 
-			// $email->attach($filename);
-				
+
+				// $email->setCC('another@emailHere');//CC
+				// $email->setBCC('thirdEmail@emialHere');// and BCC
+				// $filename = '/img/yourPhoto.jpg'; //you can use the App patch 
+				// $email->attach($filename);
+
 				$email->send();
 				$email->printDebugger(['headers']);
 				echo json_encode($data);
-
-			}
-				
-			else{
+			} else {
 				$data['validation'] = $this->validator;
 				echo_json($data);
-
 			}
-		
-			
 		}
 	}
-		
-
 }
