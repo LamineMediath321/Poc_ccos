@@ -7,7 +7,7 @@
 
     <!-- Basic Page Needs==================================================-->
     <title>Plateforme Opportunit&eacute;s</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" content-type="text/html">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- CSS==================================================-->
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/css/plugins.css'); ?>">
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="<?php echo base_url('/assets/css/jquery.dataTables.min.css') ?>" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+    <script src="<?php echo base_url('js/main.js') ?>"></script>
+    <script src="<?php echo base_url('js/jquery.validate.js') ?>"></script>
 </head>
 
 <body>

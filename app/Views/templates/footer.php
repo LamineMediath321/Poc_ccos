@@ -359,6 +359,15 @@
 
         $('.selectpicker').selectpicker();
 
+        $("#formComp").validate({
+        rules: {
+          intitule : "required",
+        },
+        messages: {
+          intitule : "Veuillez entrer une compétence, s'il vous plat."
+
+      });
+
     });
 
     ////// FIN===================================

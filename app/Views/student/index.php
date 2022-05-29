@@ -81,19 +81,25 @@
         <div class="col-md-12 col-sm-12">
             <div class="full-card profile-tab-mt">
                 <div class="deatil-tab-employ tool-tab">
-                    <ul class="nav nav-tabs" id="simple-design-tab">
+                    <!--ul class="nav nav-tabs" id="simple-design-tab">
                         <li class="nav-item"><a class="nav-link active" href="#offers">Offres</a></li>
                         <li class="nav-item" ><a class="nav-link" href="#candidacies">Mes candidatures</a></li>
                         <li class="nav-item"><a class="nav-link" href="#activities">Activit&eacute;s</a></li>
-                        <!--li><a href="#messages">Messages <span class="info-bar">6</span></a></li>
+                        <li><a href="#messages">Messages <span class="info-bar">6</span></a></li>
                         <li><a href="#settings">Settings</a></li -->
+                        
+                    
+                    <ul class="nav nav-pills" id="simple-design-tab">
+                        <li class="active"><a data-toggle="pill" href="#offers">Offres</a></li>
+                        <li><a data-toggle="pill" href="#candidacies">Candidatures</a></li>
+                        <li><a data-toggle="pill" href="#menu2">Activités</a></li>
                     </ul>
                     <!-- Start All Sec -->
                     <div class="tab-content">
                         
                              
                         <!-- Start Job List -->
-                        <div id="offers" class="tab-pane fade">
+                        <div id="offers" class="tab-pane fade in active">
                             <div class="row">
                                 <?php foreach ($offers as $offer) { ?>
                                     <div class="item-click">

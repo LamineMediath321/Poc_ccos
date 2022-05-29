@@ -153,16 +153,16 @@
         },
         messages: {
           firstname: {
-            required: "Veillez saisir votre prenom",
+            required: "Veuillez saisir votre prenom",
             minlength: "Votre prenom doit contenir au moins 3 caracteres"
           },
           lastname: {
-            required: "Veillez saisir votre nom de famille",
+            required: "Veuillez saisir votre nom de famille",
             minlength: "Votre nom doit contenir au moins 2 caracteres"
           },
           email: {
-            required: "Veillez entrer votre login",
-            email: "Veillez saisir une adresse email correcte"
+            required: "Veuillez entrer votre login",
+            email: "Veuillez saisir une adresse email correcte"
           },
           password: {
             required: "Veuillez fournir un mot de passe",
@@ -173,8 +173,8 @@
             minlength: "Votre mot de passe doit contenir au moins 8 caractères",
             equalTo: "Entrez le même mot de passe"
           },
-          ufr: "Veillez choisr votre ufr",
-          profil: "Veillez precisez votre profil"
+          ufr: "Veuillez choisr votre ufr",
+          profil: "Veuillez precisez votre profil"
         }
 
       });

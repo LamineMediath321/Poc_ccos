@@ -136,7 +136,9 @@ endif;
 
 
                 <form method="post" action="javascript:void(0)" id="formComp" enctype="multipart/form-data" class="form-horizontal">
-
+                        <div class="row">
+                            <p id="error" style=" font-style:italic; tesyt-center"></p>
+                        </div>
                     <div class="modal-body form">
                         <div class="row">
 
@@ -147,9 +149,7 @@ endif;
                             </div>
                         </div>
 
-                        <div class="row">
-                            <p id="error" style=" font-style:italic;"></p>
-                        </div>
+                        
 
                         <div class="modal-footer">
                             <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
@@ -162,3 +162,21 @@ endif;
         </div>
     </div>
 </div>
+
+<script src="<?php echo base_url('js/jquery-3.3.1.min.js') ?>"></script>
+  <script src="<?php echo base_url('js/popper.min.js') ?>"></script>
+  <script src="<?php echo base_url('js/bootstrap.min.js') ?>"></script>
+  <script src="<?php echo base_url('js/main.js') ?>"></script>
+  <script src="<?php echo base_url('js/jquery.validate.js') ?>"></script>
+  <script>
+    $().ready(function() {
+      $("#formComp").validate({
+        rules: {
+          intitule : "required",
+        }
+        messages: {
+          intitule : "Veuillez entrer une compétence, s'il vous plat."
+
+      });
+    });
+  </script>
