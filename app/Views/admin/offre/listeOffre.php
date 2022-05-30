@@ -55,7 +55,7 @@ endif;
                     </div>
                     <div id="result"></div>
                     <div class="card-body">
-                        <div class="table-scrollable table-responsive">
+                        <div class="table-scrollable table-responsive col-md-12">
                             <table id="table_of" class="table table-striped table-bordered first">
                                 <thead>
                                     <tr>

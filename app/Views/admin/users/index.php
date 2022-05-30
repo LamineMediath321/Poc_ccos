@@ -24,11 +24,11 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Liste des utilisateurs</strong>
+                        <h3 class="card-title" style="color:brown">Liste des utilisateurs</h3>
                     </div>
                     <div class="card-body">
-                    <div class="table-scrollable table-responsive">
-                        <table id="table_users" class="table table-striped table-bordered">
+                    <div class="table-scrollable table-responsive col-md-12">
+                        <table id="table_users" class="table table-striped table-bordered ">
                             <thead>
                                 <tr>
                                     <th class="text-center" style="width: 30px">#</th>
@@ -92,6 +92,7 @@
                                     <th>Email</th>
                                     <th>Role</th>
                                     <th>Activation</th>
+                                    <th  style="display:none"></th>
                                     
                                 </tr>
                             </tfoot>

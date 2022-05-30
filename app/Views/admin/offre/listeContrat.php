@@ -39,7 +39,7 @@
                 </div>
                 <div id="result"></div>
                 <div class="card-body">
-                    <div class="table-scrollable">
+                    <div class="table-scrollable col-md-12">
                         <table id="table_tc" class="table table-striped table-bordered first">
                             <thead>
                                 <tr>
@@ -64,6 +64,14 @@
                                     </tr>
                                 <?php } ?>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                <th>Intitule du contrat</th>
+                                   
+                                   <th>Action</th>
+                                    
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>

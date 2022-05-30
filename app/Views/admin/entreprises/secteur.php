@@ -38,7 +38,7 @@
                     <h2>Liste des secteurs</h2>
                 </div>
                 <div class="card-body">
-                    <div class="table-scrollable">
+                    <div class="table-scrollable col-md-12">
                         <table id="table_secteur" class="table table-striped table-bordered first">
                             <thead>
                                 <tr>
@@ -61,6 +61,13 @@
                                     </tr>
                                 <?php } ?>
                             </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <th>Intitule</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
