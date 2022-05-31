@@ -136,9 +136,9 @@ endif;
 
 
                 <form method="post" action="javascript:void(0)" id="formComp" enctype="multipart/form-data" class="form-horizontal">
-                    <div class="row">
+                    <!-- <div class="row">
                         <p id="error" style=" font-style:italic; tesyt-center"></p>
-                    </div>
+                    </div> -->
                     <div class="modal-body form">
                         <div class="row">
 
