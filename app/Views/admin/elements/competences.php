@@ -142,14 +142,14 @@ endif;
 
                             <div class="col-12 col-sm-6">
                                 <label for="intitule" style="font-weight:bold;">Intitule</label>
-                                <input type="text" class="form-control" name="intitule" id="intitule" onfocus="hideMessage()" onkeyup="validateInput()">
+                                <input type="text" class="form-control" name="intitule" id="intitule">
 
                             </div>
                         </div>
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <p id="error" style=" font-style:italic;"></p>
-                        </div>
+                        </div> -->
 
                         <div class="modal-footer">
                             <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
@@ -162,3 +162,19 @@ endif;
         </div>
     </div>
 </div>
+
+<script src="<?php echo base_url('js/jquery-3.3.1.min.js') ?>"></script>
+<script src="<?php echo base_url('js/jquery.validate.js') ?>"></script>
+<script>
+    $("#formComp").validate({
+        rules: {
+
+            intitule: "required"
+        },
+        messages: {
+
+            intitule: "Veillez entrer une competence"
+        }
+
+    });
+</script>

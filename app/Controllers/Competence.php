@@ -133,7 +133,7 @@ class Competence extends BaseController
 
 		if ($this->request->getMethod() == 'post') {
 			$rules = [
-				'intitule' => 'required|is_unique'
+				'intitule' => 'required'
 			];
 			if ($this->validate($rules)) {
 				if (empty($comp))

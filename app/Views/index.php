@@ -190,61 +190,9 @@
 <div class="clearfix"></div>
 
 
-<!-- <div class="container">
-    <div class="row">
-        <?php if ($offers_) {
-            foreach ($offers_ as $offer) {
-        ?>
-                <div class="col-md-4">
-                    <h4 class="text-center"><strong><?= $offer['nomEntreprise'] ?></strong></h4>
-                    <hr>
-                    <div class="profile-card-4 text-center"><img src="<?php echo base_url('assets/images/ugb.jpg') ?>" class="img img-responsive">
-                        <div class="profile-content">
-                            <div class="profile-name">
-                                <a href="<?php echo base_url(); ?>/offre/<?= $offer['idOpportunite'] ?>">
-                                    <?= $offer['title'] ?>
-                                </a>
-                                <div class="brows-job-type"><span class="freelanc"><?= $offer['contractType'] ?></span></div>
-                            </div>
-                            <div class="profile-description">
-                                <p><span><?= $offer['nomEntreprise'] ?></span></p>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-4 h-auto">
-                                    <div class="profile-overview">
-
-                                        <h5>
-                                            <i class="fa fa-map-marker h"></i><?= $offer['nom'] ?>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-xs-4">
-
-                                </div>
-                                <div class="col-xs-4">
-                                    <div class="profile-overview">
-
-                                        <p><span class="brows-job-sallery"><i class="fa fa-hourglass-half"></i>
-                                                <?php
-                                                setlocale(LC_TIME, 'fr_FR.utf8', 'french', 'French_France.1252', 'fr_FR.ISO8859-1', 'fra');
-                                                echo strftime("%d %b %G", strtotime($offer['dateCloture']));
-                                                ?>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        <?php }
-        } ?>
-    </div>
-
-</div> -->
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<main>
+<main class="col-6">
 
     <div class="container">
         <h3 class="card-title text-center alert alert-info">Les étapes pour candidater à une offre</h3>
@@ -297,7 +245,7 @@
     </div>
 </main>
 
-<section class="testimonial" id="testimonial">
+<section class="testimonial col-6" id="testimonial">
 
     <div class="container">
         <div class="row">

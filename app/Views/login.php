@@ -40,7 +40,7 @@
                         <form action="<?php echo base_url(); ?>/user/login" method="post" id="loginForm">
                             <div class="form-group first">
                                 <label class="control-label" for="username">Login</label>
-                                <input type="email" name="email" class="form-control" placeholder="login@exmple.com">
+                                <input type="email" name="email" class="form-control" placeholder="login@example.com">
                             </div>
                             <div class="form-group last mb-3">
                                 <label class="control-label" for="password">Mot de passe</label>
@@ -109,7 +109,6 @@
             });
         });
     </script>
-
 </body>
 
 </html>
