@@ -140,6 +140,7 @@ class Competence extends BaseController
 					$this->model->add_competence($data);
 			} else {
 				$data['validation'] = $this->validator;
+				echo_json($data);
 			}
 		}
 	}

@@ -8,23 +8,36 @@
 <!-- Title Header End -->
 
 <!-- Resume Detail Start -->
-<section class="detail-desc">
+<section class="detail-desc ">
+    <div class="">
+        <div class="row ">
+            
+       
+            <?php if (!$resume) : ?>
+            <div class="row no-padd mrg-0">
+                <div class="detail pannel-footer">
+                    <div class="col-md-7 col-sm-7 padd-15">
+                        <p> <i class="fa fa-warning"></i> Veuillez completer vos informations pour pouvoir editer votre cv</p>
+                    </div>
+                    <div class="col-md-5 col-sm-5">
+                        <div class="detail-pannel-footer-btn pull-right">
+                        <a href="<?php echo base_url(); ?>/dashboard" class="footer-btn grn-btn" title="hdjhd" >
+                            Completer mes informations</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+<?php endif; ?>
+</section>
+<!-- Resume Detail End -->
+
+<?php if ($resume) : ?>
+    <section class="detail-desc">
     <div class="container white-shadow">
         <div class="row ">
             <div class="detail-pic">
                 <img src="<?= $resume ? base_url() . '/assets/images/' . $persinfo['photo'] : base_url() . '/assets/images/avatar.png' ?>" width="133" height="133" alt="photo de profil">
-            </div>
-
-            <div class="detail-status">
-                <?php if (!$resume) : ?>
-                    <span>Informations personnelles incompletes</span>
-
-                <?php elseif ($persinfo['idUtilisateur'] == session('id')) : ?>
-
-                    <a href="#" onclick="edit_perso_info(<?php echo session('id'); ?>)">
-                        <i class="fa fa-pencil"></i>
-                    </a>
-                <?php endif; ?>
             </div>
         </div>
         <div class="row bottom-mrg mrg-0">
@@ -51,26 +64,10 @@
                 </div>
             </div>
         </div>
-        <?php if (!$resume) : ?>
-            <div class="row no-padd mrg-0">
-                <div class="detail pannel-footer">
-                    <div class="col-md-7 col-sm-7 padd-15">
-                        <p> <i class="fa fa-warning"></i> Veuillez completer vos informations pour pouvoir continuer le processus de creation</p>
-                    </div>
-                    <div class="col-md-5 col-sm-5">
-                        <div class="detail-pannel-footer-btn pull-right">
-                            <a href="#" class="footer-btn grn-btn" title="hdjhd" onclick="perso_info(<?php echo session('id'); ?>)">Completer mes informations</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
     </div>
-<?php endif; ?>
 </section>
 <!-- Resume Detail End -->
 
-
-<?php if ($resume) : ?>
     <section class="full-detail-description full-detail resume-detail">
         <div class="container">
 

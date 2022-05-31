@@ -136,9 +136,7 @@ endif;
 
 
                 <form method="post" action="javascript:void(0)" id="formComp" enctype="multipart/form-data" class="form-horizontal">
-                    <div class="row">
-                        <p id="error" style=" font-style:italic; tesyt-center"></p>
-                    </div>
+                  
                     <div class="modal-body form">
                         <div class="row">
 
@@ -149,9 +147,7 @@ endif;
                             </div>
                         </div>
 
-                        <!-- <div class="row">
-                            <p id="error" style=" font-style:italic;"></p>
-                        </div> -->
+                     
 
                         <div class="modal-footer">
                             <input type="hidden" name="idCompetence" class="form-control" id="idCompetence">
