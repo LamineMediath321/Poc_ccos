@@ -91,18 +91,14 @@
             </div>
             <form method="post" action="javascript:void(0)" id="formtc" enctype="multipart/form-data" class="form-horizontal">
                 <div class="modal-body form">
+                    
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label for="intituleTC">Intitule</label>
-                                <input type="text" class="form-control" name="intituleTC" id="intituleTC" value="" onfocus="hideMessage()" onkeyup="ValiderInputTypeContrat()">
+                                <input type="text" class="form-control" name="intituleTC" id="intituleTC" value="" >
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        
-                            <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
-                        
                     </div>
                 </div>
                 <div class="modal-footer">
