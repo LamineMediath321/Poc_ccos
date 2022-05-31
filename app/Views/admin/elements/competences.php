@@ -162,19 +162,3 @@ endif;
         </div>
     </div>
 </div>
-
-<script src="<?php echo base_url('js/jquery-3.3.1.min.js') ?>"></script>
-<script src="<?php echo base_url('js/jquery.validate.js') ?>"></script>
-<script>
-    $("#formComp").validate({
-        rules: {
-
-            intitule: "required"
-        },
-        messages: {
-
-            intitule: "Veillez entrer une competence"
-        }
-
-    });
-</script>

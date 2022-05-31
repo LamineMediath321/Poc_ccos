@@ -64,7 +64,34 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 -->
 
+<script src="<?php echo base_url('js/jquery.validate.js') ?>"></script>
+<script>
+    //Pour le formulaire de competence
+    $("#formComp").validate({
+        rules: {
 
+            intitule: "required"
+        },
+        messages: {
+
+            intitule: "Veillez entrer une competence"
+        }
+
+    });
+    //End of competence
+
+    $("#field_form").validate({
+        rules: {
+
+            field_title: "required"
+        },
+        messages: {
+
+            field_title: "Veillez entrer un domaine"
+        }
+
+    });
+</script>
 
 
 <?php if (!session('AsVisitor')) : ?>
