@@ -87,6 +87,9 @@
             </div>
             <form method="post" action="javascript:void(0)" id="secteur_form" enctype="multipart/form-data" class="form-horizontal">
                 <div class="modal-body form">
+                    <div class="row px-5">                       
+                        <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
+                    </div>
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
@@ -95,10 +98,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        
-                            <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
-                        
+                    <div class="row">                       
+                        <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -74,11 +74,27 @@
         },
         messages: {
 
-            intitule: "Veillez entrer une competence"
+            intitule: "Veuillez entrer une competence"
         }
 
     });
     //End of competence
+    $("#secteur_form").validate({
+            rules: {
+            intituleSecteur: "required"
+            },
+            messages: {
+                intituleSecteur: "Veuillez saisir un secteur, s'il vous plait."
+            }
+        });
+        $("#formtc").validate({
+            rules: {
+                intituleTC: "required"
+            },
+            messages: {
+                intituleTC: "Veuillez saisir un type de contrat, s'il vous plait."
+            }
+        });
 
     //Fomulaire Domaine
     $("#field_form").validate({
@@ -390,16 +406,7 @@
 
                 $('.selectpicker').selectpicker();
 
-                $("#formComp").validate({
-                        rules: {
-                            intitule: "required",
-                        },
-                        messages: {
-                            intitule: "Veuillez entrer une compétence, s'il vous plat."
-
-                        });
-
-                });
+            });
 
             ////// FIN===================================
 </script>
