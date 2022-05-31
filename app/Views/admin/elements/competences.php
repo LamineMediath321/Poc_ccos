@@ -163,20 +163,3 @@ endif;
     </div>
 </div>
 
-<script src="<?php echo base_url('js/jquery-3.3.1.min.js') ?>"></script>
-  <script src="<?php echo base_url('js/popper.min.js') ?>"></script>
-  <script src="<?php echo base_url('js/bootstrap.min.js') ?>"></script>
-  <script src="<?php echo base_url('js/main.js') ?>"></script>
-  <script src="<?php echo base_url('js/jquery.validate.js') ?>"></script>
-  <script>
-    $().ready(function() {
-      $("#formComp").validate({
-        rules: {
-          intitule : "required",
-        }
-        messages: {
-          intitule : "Veuillez entrer une compétence, s'il vous plat."
-
-      });
-    });
-  </script>
