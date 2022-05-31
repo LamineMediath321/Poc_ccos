@@ -12,7 +12,7 @@
                 <ol class="breadcrumb text-right">
                     <li><a href="#">Tableau de bord</a></li>
                     <li><a href="#">categories</a></li>
-                    <li class="active">Candidature</li>
+                    <li class="active">Candidatures</li>
                 </ol>
             </div>
         </div>
@@ -25,16 +25,16 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Liste des etudiants qui ont postulé</strong>
+                    <h3 class="card-title" style="color:brown">Liste des étudiants ayant candidaté</h3>
                     </div>
-                    <div class="card-body table-responsive">
+                    <div class="card-body table-responsive col-md-12">
                         <table id="table_users" class="table table-striped table-bordered text-center">
                             <thead>
                                 <tr>
-                                    <th>Intitule de l'offre</th>
-                                    <th>Entreprise</th>
                                     <th>Nom</th>
                                     <th>Prenom</th>
+                                    <th>Offre</th>
+                                    <th>Entreprise</th>
                                     <th>Date Postulée</th>
                                     <th>Statut</th>
                                     <th>Actions</th>
@@ -44,10 +44,11 @@
                                 <?php setlocale(LC_TIME, 'fr_FR.utf8', 'french', 'French_France.1252', 'fr_FR.ISO8859-1', 'fra'); ?>
                                 <?php foreach ($etudiants_postules as $etudiant_postule) { ?>
                                     <tr>
-                                        <td><?= $etudiant_postule['intitule'] ?></td>
-                                        <td><?= $etudiant_postule['nomEntreprise'] ?></td>
+                                        
                                         <td><?= $etudiant_postule['nom'] ?></td>
                                         <td><?= $etudiant_postule['prenom'] ?></td>
+                                        <td><?= $etudiant_postule['intitule'] ?></td>
+                                        <td><?= $etudiant_postule['nomEntreprise'] ?></td>
                                         <td><?= strftime("%d %b %G", strtotime($etudiant_postule['date_postulee'])) ?></td>
                                         <?php if ($etudiant_postule['statut'] === "En attente") { ?>
                                             <td class="text-white bg-info"><?= $etudiant_postule['statut'] ?></td>
@@ -70,6 +71,16 @@
                                     </tr>
                                 <?php } ?>
                             </tbody>
+                            <tfoot>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Offre</th>
+                                    <th>Entreprise</th>
+                                    <th>Date Postulée</th>
+                                    <th>Statut</th>
+                                    <th>Actions</th>
+                            </tfoot>
+
                         </table>
                         <?= $pager->links() ?>
                     </div>

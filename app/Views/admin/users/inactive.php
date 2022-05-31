@@ -24,11 +24,11 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Liste des comptes inactifs</strong>
+                    <h3 class="card-title" style="color:brown">Liste des inactifs</h3>
                     </div>
                     <div id="result"></div>
                     <div class="card-body">
-                    <div class="table-scrollable table-responsive">
+                    <div class="table-scrollable table-responsive col-md-12">
                         <table id="table_users" class="table table-striped table-bordered first">
                             <thead>
                                 <tr>
@@ -81,6 +81,18 @@
                                     </tr>
                                 <?php endif; endforeach; ?>                        
                             </tbody>
+
+                            <tfoot>
+                                <tr>
+                                <th></th>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Activation</th>
+                                    
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>

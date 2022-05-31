@@ -50,11 +50,11 @@ endif;
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h1>Liste des competences</h1>
+                        <h3 class="card-title" style="color:brown">Liste des competences</h3>
                     </div>
                     <div id="result"></div>
                     <div class="card-body">
-                        <div class="table-scrollable table-responsive">
+                        <div class="table-scrollable table-responsive col-md-12">
                             <table id="table_of" class="table table-striped table-bordered first">
                                 <thead>
                                     <tr>
@@ -136,7 +136,9 @@ endif;
 
 
                 <form method="post" action="javascript:void(0)" id="formComp" enctype="multipart/form-data" class="form-horizontal">
-
+                    <div class="row">
+                        <p id="error" style=" font-style:italic; tesyt-center"></p>
+                    </div>
                     <div class="modal-body form">
                         <div class="row">
 

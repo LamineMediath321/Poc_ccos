@@ -35,11 +35,11 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h1>Liste des types de contrat</h1>
-                </div>
+                <h3 class="card-title" style="color:brown">Liste des types de contrat</h3>               
+             </div>
                 <div id="result"></div>
                 <div class="card-body">
-                    <div class="table-scrollable">
+                    <div class="table-scrollable col-md-12">
                         <table id="table_tc" class="table table-striped table-bordered first">
                             <thead>
                                 <tr>
@@ -64,6 +64,14 @@
                                     </tr>
                                 <?php } ?>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                <th>Intitule du contrat</th>
+                                   
+                                   <th>Action</th>
+                                    
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
