@@ -204,7 +204,7 @@ class Cv extends BaseController
 		// 		'idCV'   => $resume,
 		// 		'idProfil'   => $profile
 		// 	];
-		// }
+		// }z
 		if ((new CvModel())->edit_persinfos($student_id, $data, $resume))
 			echo json_encode(array("status" => TRUE, "message" => "Informations modifiees"));
 

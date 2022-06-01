@@ -87,19 +87,15 @@
             </div>
             <form method="post" action="javascript:void(0)" id="secteur_form" enctype="multipart/form-data" class="form-horizontal">
                 <div class="modal-body form">
+                   
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label for="intituleSecteur">Intitule</label>
-                                <input type="text" class="form-control" name="intituleSecteur" id="intituleSecteur" value="" onfocus="hideMessage()" onkeyup="ValiderInputSecteur()">
+                                <input type="text" class="form-control" name="intituleSecteur" id="intituleSecteur" value="">
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        
-                            <p id="error" style=" font-style:italic;"></p><i id="icon"></i>
-                        
-                    </div>
+                
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="idSecteur" class="form-control" id="idSecteur">
