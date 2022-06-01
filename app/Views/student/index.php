@@ -12,7 +12,7 @@
     endif;
         ?>
         <h2></h2>
-        </div> 
+        </div>
 </section>
 
 <div class="clearfix"></div>
@@ -87,8 +87,8 @@
                         <li class="nav-item"><a class="nav-link" href="#activities">Activit&eacute;s</a></li>
                         <li><a href="#messages">Messages <span class="info-bar">6</span></a></li>
                         <li><a href="#settings">Settings</a></li -->
-                        
-                    
+
+
                     <ul class="nav nav-pills" id="simple-design-tab">
                         <li class="active"><a data-toggle="pill" href="#offers">Offres</a></li>
                         <li><a data-toggle="pill" href="#candidacies">Candidatures</a></li>
@@ -96,8 +96,8 @@
                     </ul>
                     <!-- Start All Sec -->
                     <div class="tab-content">
-                        
-                             
+
+
                         <!-- Start Job List -->
                         <div id="offers" class="tab-pane fade in active">
                             <div class="row">
@@ -145,7 +145,7 @@
                                     </div>
                                 <?php } ?>
                             </div>
-                            
+
                         </div>
                         <!-- End Offer List -->
 
@@ -250,8 +250,8 @@
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
                                 <label for="profile">Profil</label>
-                                <select name="profiles[]" multiple class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="profile">
-                                    <option>Choisissez...</option>
+                                <select name="profiles" multiple class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="profile">
+                                    <option value="">Choisissez...</option>
                                     <?Php foreach ($profiles as $profile) :  ?>
                                         <option value="<?php echo $profile['idProfil']  ?>"><?php echo $profile['intitule']  ?></option>
                                     <?php endforeach;  ?>
@@ -262,7 +262,7 @@
                             <div class="form-group">
                                 <label class="bmd-label-floating" for="sex">Genre</label>
                                 <select name="sex" id="sex" class="form-control custom-select">
-                                    <option>Genre</option>
+                                    <option value="">Genre</option>
                                     <option value="H">Homme</option>
                                     <option value="F">Femme</option>
                                 </select>
@@ -296,7 +296,7 @@
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
                                 <label for="pict"><img src="" width="130" height="130" id="pict" alt=""></label>
-                                <input type="file" name="pict" class="form-control" id="pic"  accept="image/*">
+                                <input type="file" name="pict" class="form-control" id="pic" accept="image/*">
                             </div>
 
                         </div>
@@ -306,14 +306,14 @@
                     <div class="modal-footer">
                         <input type="hidden" name="idE" class="form-control" id="idE">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                         
 
-                       
 
-                       <button type="submit" id="btn_save"  onclick="save_cv()" class="btn btn-primary">Enregistrer</button>
-                 
 
-                 </div>
+
+                        <button type="submit" id="btn_save" onclick="save_cv()" class="btn btn-primary">Enregistrer</button>
+
+
+                    </div>
                 </div>
             </form>
         </div>
@@ -321,9 +321,8 @@
 </div>
 </div>
 <style>
-    .form-group{
-        width:85%;
-        padding-left:3.5em;
+    .form-group {
+        width: 85%;
+        padding-left: 3.5em;
     }
-    
 </style>

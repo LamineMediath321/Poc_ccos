@@ -100,7 +100,7 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label for="field_title">Intitule</label>
-                                        <input type="text" class="form-control" name="field_title" id="field_title" value="" onfocus="hideMessage()" onkeyup="ValiderInputField()">
+                                        <input type="text" class="form-control" name="field_title" id="field_title" value="">
                                     </div>
                                 </div>
                             </div>

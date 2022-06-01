@@ -25,15 +25,14 @@ class Competence extends BaseController
 			);
 			// $comp = $this->model->get_competence_cv($data);
 			$rules = [
-				'skill' => 'required'
+				'skill' => 'required',
 			];
 			if ($this->validate($rules)) {
-
 				$this->model->add_skills($data);
 				echo json_encode(array("status" => true, "message" => "success"));
 			} else {
 				$data['validation'] = $this->validator;
-				echo json_encode($data);
+				echo_json($data);
 			}
 		}
 	}

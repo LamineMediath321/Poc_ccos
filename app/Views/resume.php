@@ -282,7 +282,7 @@
                             <div class="form-group">
                                 <label class="bmd-label-floating" for="sex">Genre</label>
                                 <select name="sex" id="sex" class="form-control custom-select">
-                                    <option>Genre</option>
+                                    <option value="">Genre</option>
                                     <option value="H">Homme</option>
                                     <option value="F">Femme</option>
                                 </select>
@@ -363,8 +363,8 @@
                             <div class="form-group">
                                 <label for="studyLevel">Niveau d'étude</label>
                                 <!--input type="text" class="form-control" name="diploma" id="diploma" value="" -->
-                                <select name="studyLevel" class="select2 form-control custom-select" onchange="hideMessage()">
-                                    <option>Choisissez...</option>
+                                <select name="studyLevel" class="select2 form-control custom-select">
+                                    <option value="">Choisissez...</option>
                                     <?Php foreach ($studyLevels as $studyLevel) :  ?>
                                         <option value="<?= $studyLevel['idNiveauEtude']  ?>"><?= $studyLevel['intitule']  ?></option>
                                     <?php endforeach;  ?>
@@ -374,8 +374,8 @@
                         <div class="col-12 col-sm-6 field">
                             <div class="form-group">
                                 <label for="field">Domaine</label>
-                                <select name="field" class="select2 form-control custom-select" onchange="hideMessage()">
-                                    <option>Choisissez...</option>
+                                <select name="field" class="select2 form-control custom-select">
+                                    <option value="">Choisissez...</option>
                                     <?Php foreach ($fields as $field) :  ?>
                                         <option value="<?= $field['idDomaine']  ?>"><?= $field['intitule']  ?></option>
                                     <?php endforeach;  ?>
@@ -487,7 +487,7 @@
                             <div class="form-group">
                                 <label for="skill">Compétences</label>
                                 <select name="skill" class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="skill" onchange="hideMessage()" onchange="validateInput()">
-                                    <option>Choisissez...</option>
+                                    <option value="">Choisissez...</option>
 
                                     <?Php foreach ($skills as $skill) :  ?>
                                         <option value="<?= $skill['idCompetence']  ?>"><?= $skill['intitule']  ?></option>
@@ -527,7 +527,7 @@
                             <div class="form-group">
                                 <label for="language">Langue</label>
                                 <select name="language" class="select2 form-control custom-select" id="language" onchange="hideMessage()">
-                                    <option>Sélectionnez la langue...</option>
+                                    <option value="">Sélectionnez la langue...</option>
                                     <?Php foreach ($languages as $language) :  ?>
                                         <option value="<?= $language['idLangue']  ?>"><?= $language['intitule'] ?></option>
                                     <?php endforeach;  ?>
@@ -538,7 +538,7 @@
                             <div class="form-group">
                                 <label for="level">Niveau</label>
                                 <select name="level" class="select2 form-control" data-container="select_contain" id="level">
-                                    <option>Sélectionnez votre niveau de comprehension...</option>
+                                    <option value="">Sélectionnez votre niveau de comprehension...</option>
                                     <option value="Moyen">Moyen</option>
                                     <option value="Assez bien">Assez bien</option>
                                     <option value="Tres bien">Tres bien</option>
