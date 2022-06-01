@@ -250,7 +250,7 @@
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
                                 <label for="profile">Profil</label>
-                                <select name="profiles" multiple class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="profile">
+                                <select name="profiles[]" multiple class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="profile">
                                     <option value="">Choisissez...</option>
                                     <?Php foreach ($profiles as $profile) :  ?>
                                         <option value="<?php echo $profile['idProfil']  ?>"><?php echo $profile['intitule']  ?></option>

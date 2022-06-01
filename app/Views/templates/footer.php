@@ -80,21 +80,21 @@
     });
     //End of competence
     $("#secteur_form").validate({
-            rules: {
+        rules: {
             intituleSecteur: "required"
-            },
-            messages: {
-                intituleSecteur: "Veuillez saisir un secteur"
-            }
-        });
-        $("#formtc").validate({
-            rules: {
-                intituleTC: "required"
-            },
-            messages: {
-                intituleTC: "Veuillez saisir un type de contrat"
-            }
-        });
+        },
+        messages: {
+            intituleSecteur: "Veuillez saisir un secteur"
+        }
+    });
+    $("#formtc").validate({
+        rules: {
+            intituleTC: "required"
+        },
+        messages: {
+            intituleTC: "Veuillez saisir un type de contrat"
+        }
+    });
 
     //Fomulaire Domaine
     $("#field_form").validate({
@@ -124,7 +124,7 @@
             natnalty: "required",
             pict: "required",
             phone: "required",
-            profiles: "required",
+            // profiles: "required",
         },
         messages: {
             adress: {
@@ -140,7 +140,7 @@
                 required: "Veillez saisir votre numero de téléphone",
                 tel: "Votre saisir un numero correcte"
             },
-            profiles: "Veillez sélectionner votre profil",
+            // profiles: "Veillez sélectionner votre profil",
         }
     });
     //end 
@@ -424,67 +424,67 @@
     // Start of dataTables load function
     $(document).ready(function() {
 
-                // Formulaire inscription 
-                // Affichage de l'input correspondant au profil de l'utilisateur
-                $('[name="profil"]').on('change', function() {
-                    if ($(this).val() == 'etudiant' || $(this).val() == 'alumni') {
-                        // $('.personnel').hide();
-                        $('#code_etudiant').show();
-                    } else {
-                        $('#code_etudiant').hide();
-                        // $('.personnel').show();
-                    }
+        // Formulaire inscription 
+        // Affichage de l'input correspondant au profil de l'utilisateur
+        $('[name="profil"]').on('change', function() {
+            if ($(this).val() == 'etudiant' || $(this).val() == 'alumni') {
+                // $('.personnel').hide();
+                $('#code_etudiant').show();
+            } else {
+                $('#code_etudiant').hide();
+                // $('.personnel').show();
+            }
 
-                });
+        });
 
-                // sidebar nav-item active class add
-                $('.nav .nav-item').click(function() {
-                    // $(this).siblings().className = $(this).siblings().className.replace("nav-item active", "nav-item");
+        // sidebar nav-item active class add
+        $('.nav .nav-item').click(function() {
+            // $(this).siblings().className = $(this).siblings().className.replace("nav-item active", "nav-item");
 
-                    // $('.nav .nav-item').removeClass('active');
-                    $(this).className += " active";
+            // $('.nav .nav-item').removeClass('active');
+            $(this).className += " active";
 
-                });
+        });
 
-                $('#styleOptions').styleSwitcher();
+        $('#styleOptions').styleSwitcher();
 
-                $("#pic").change(function() {
-                    if (this.files || this.files[0]) {
-                        var reader = new FileReader();
-                        reader.onload = function(e) {
-                            $('#pict').attr('src', e.target.result);
-                        }
-                        reader.readAsDataURL(this.files[0]);
-                    }
-                });
+        $("#pic").change(function() {
+            if (this.files || this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#pict').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
 
-                var editor;
+        var editor;
 
-                ClassicEditor
-                    .create(document.querySelector('#editor'))
-                    .then(newEditor => {
-                        editor = newEditor;
-                        console.log(editor);
-                    })
-                    .catch(error => {
-                        console.error(error);
-                    });
-                editor.editing.view.change(writer => {
-                    writer.setStyle('height', '200px', editor.editing.view.document.getRoot());
-                });
-
-                $('.sidebar .nav-item').click(function() {
-                    $(this).siblings().removeClass('active');
-                    $(this).addClass('active');
-                    console.log(this);
-                });
-
-
-                $('.selectpicker').selectpicker();
-
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(newEditor => {
+                editor = newEditor;
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
             });
+        editor.editing.view.change(writer => {
+            writer.setStyle('height', '200px', editor.editing.view.document.getRoot());
+        });
 
-            ////// FIN===================================
+        $('.sidebar .nav-item').click(function() {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+            console.log(this);
+        });
+
+
+        $('.selectpicker').selectpicker();
+
+    });
+
+    ////// FIN===================================
 </script>
 <script type="text/javascript">
     /*  =========================================================== 

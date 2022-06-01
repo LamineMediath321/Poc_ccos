@@ -2038,7 +2038,8 @@ span.new-offer {
     padding-top: 9%;
     padding-bottom: 0;
     position: relative;
-    background-position: center
+    background-position: center;
+    min-width: 1400px;
 }
 
 .banner:before {
@@ -2051,8 +2052,8 @@ span.new-offer {
 }
 
 .banner-text {
-    margin-top: 5%;
-    margin-bottom: 1em;
+    margin-top: 1%;
+    margin-bottom: 0.5em;
     text-align: center
 }
 
@@ -2073,7 +2074,7 @@ form.form-horizontal {
     background: #fff;
     border: none;
     border-radius: 0;
-    height: 48px;
+    height: 18px;
     color: #282C32;
     font-size: 15px;
     width: 100%;
@@ -2089,7 +2090,7 @@ form.form-horizontal {
 .banner-caption .input-group {
     width: 100%;
     padding: 0;
-    display: block
+    display: block;
 }
 
 .banner-caption .btn-primary {
